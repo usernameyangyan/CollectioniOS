@@ -38,16 +38,13 @@ open class SessionManager {
 
     /// Creates default values for the "Accept-Encoding", "Accept-Language" and "User-Agent" headers.
     public static let defaultHTTPHeaders: HTTPHeaders = {
-        // Accept-Encoding HTTP Header; see https://tools.ietf.org/html/rfc7230#section-4.2.3
         let acceptEncoding: String = "gzip;q=1.0, compress;q=0.5"
 
-        // Accept-Language HTTP Header; see https://tools.ietf.org/html/rfc7231#section-5.3.5
         let acceptLanguage = Locale.preferredLanguages.prefix(6).enumerated().map { index, languageCode in
             let quality = 1.0 - (Double(index) * 0.1)
             return "\(languageCode);q=\(quality)"
         }.joined(separator: ", ")
 
-        // User-Agent Header; see https://tools.ietf.org/html/rfc7231#section-5.5.3
         // Example: `iOS Example/1.0 (org.alamofire.iOS-Example; build:1; iOS 10.0.0) Alamofire/4.0.0`
         let userAgent: String = {
             if let info = Bundle.main.infoDictionary {
@@ -356,7 +353,6 @@ open class SessionManager {
     /// data is written incorrectly and will always fail to resume the download. For more information about the bug and
     /// possible workarounds, please refer to the following Stack Overflow post:
     ///
-    ///    - http://stackoverflow.com/a/39347461/1342462
     ///
     /// - parameter resumeData:  The resume data. This is an opaque data blob produced by `URLSessionDownloadTask`
     ///                          when a task is cancelled. See `URLSession -downloadTask(withResumeData:)` for

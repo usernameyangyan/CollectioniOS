@@ -14,7 +14,7 @@ extension JSONSerialization {
     }
     
     static func yy_JSON<T>(_ data: Data, _ type: T.Type) -> T? {
-        return try? jsonObject(with: data,
+        return try! jsonObject(with: data,
                                options: .allowFragments) as? T
     }
     

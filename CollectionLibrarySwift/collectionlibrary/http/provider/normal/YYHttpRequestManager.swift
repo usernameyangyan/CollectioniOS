@@ -142,7 +142,7 @@ public class YYHttpRequestTaskManager {
         if sessionManager != nil {
             dataRequest = sessionManager?.request(url, method: method, parameters: params, encoding: encoding, headers: headers)
         } else {
-            dataRequest = CollectionLibrarySwift.request(url, method: method, parameters: params, encoding: encoding, headers: headers)
+            dataRequest = HttpRequest.request(url, method: method, parameters: params, encoding: encoding, headers: headers)
         }
         
         return self
@@ -164,7 +164,7 @@ public class YYHttpRequestTaskManager {
             if sessionManager != nil {
                 dataRequest = sessionManager?.request(urlRequest)
             } else {
-                dataRequest = CollectionLibrarySwift.request(urlRequest)
+                dataRequest = HttpRequest.request(urlRequest)
             }
             return self
     }
