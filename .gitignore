@@ -1,0 +1,9 @@
+*.a
+!lib.a
+Pods
+*.xcuserstate
+project.xcworkspace
+xcuserdata
+UserInterfaceState.xcuserstate
+.podspec
+.DS_Store

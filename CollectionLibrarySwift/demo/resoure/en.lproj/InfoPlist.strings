@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  CollectionLibrarySwift
+
+  Created by Huatu on 2019/11/18.
+  Copyright © 2019 YoungManSter. All rights reserved.
+*/
+
+
+CFBundleDisplayName = "CollectionLibrary";

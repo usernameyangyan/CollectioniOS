@@ -1,0 +1,97 @@
+/*
+  Localizable.strings
+  CollectionLibrarySwift
+
+  Created by Huatu on 2019/11/17.
+  Copyright © 2019 YoungManSter. All rights reserved.
+*/
+"main.home" = "快速搭建项目合集";
+"language_setting" = "App应用内国际化语言设置";
+"app_language_setting" = "App应用名称国际化";
+"base_setting" = "应用基础配置";
+"commonview_tableview" = "通用基础控件之UITableView";
+"commonview_uicollectionview" = "通用基础控件之UICollectionView";
+"commonview_uicollectionview" = "通用基础控件之UICollectionView/UIScrollView";
+"commonview_navbar" = "YYNavigationBar";
+
+
+"change_language_s"="切换简体";
+"change_language_t"="切换繁体";
+"change_language_e"="切换英文";
+
+"app_name_change_tip"="1.创建Strings File文件，并命名为InfoPlist.strings\n\n2.选中创建好的文件，点击右侧Localize,勾选所需语言\n\n3.配置InfoPlist.strings：CFBundleDisplayName = ";
+
+"use_uicollectionview_tip"="通用UICollectionView,可通过CommonCollectionViewLayoutDelegate回调设定行数以及item高度";
+
+"use_uicollectionview_stretch_tip"="UICollectionViewk可拉伸头部";
+
+
+"switch_language_tip"="1.在项目创建一个Strings File 命名为 Localizable.strings\n2.选择Localizable.strings文件 点击localizaiton,选择所需语种\n3.其中第2点显示的语种如果没有所需的可以点击项目->PROJECT下面的文件->info->找到Localizations添加\n4.使用InternationalUtils类进行内容获取和系统语言切换：\n(1)在AppDelegate中通过InternationalUtils.getInstance.initUserLanguage()进行初始化\n(2)通过InternationalUtils.getInstance.getString(name)获取Localizable.string字符串对应的内容\n(3)InternationalUtils.getInstance.setLanguage(LanguageType,rootViewController)进行语言切换，其中注意的是需要传入根Controller\n(4)通过InternationalUtils.getCurrentLanguage()获取当前语言";
+
+
+//NavigationBar
+"nav_use"="NavigationBar的使用";
+"nav_use"="NavigationBar的使用";
+"nav_hidden"="是否隐藏顶部菜单栏";
+"nav_alpha"="设置顶部菜单栏透明度";
+"nav_backgroundcolor"="变换顶部菜单栏背景色";
+"nav_titlecolor"="变换顶部菜单标题颜色";
+"nav_bar_img"="变换顶部菜单背景图片";
+"nav_shadow"="是否隐藏阴影";
+"nav_trance"="是否透明";
+"nav_title"="变换标题";
+"nav_title_size"="变换字体大小";
+"nav_rightitem"="设置菜单栏右边Items";
+"nav_leftitem"="设置菜单栏左边Items";
+
+//UITableView
+"tableview_driver"="自定义分割线";
+"tableview_selection"="列表增加头布局";
+"tableview_expandableList"="ExpandableList";
+"tableview_cal"="Cell实现自适应高度";
+"tableview_sclaeheader"="可伸缩头部";
+"tableview_delete"="滑动删除";
+"tableview_multie"="多布局";
+"tableview_complex"="常用分类实现";
+//UICollectionView/UIScrollView
+"collectionview_common"="UICollectionView通用布局，可快速设置行数、高度";
+"collectionview_header"="UICollectionView可伸缩头部";
+"scrollview_header"="ScrollView可伸缩头部";
+
+//autoLayout
+"autolayout"="YYAutoLayout";
+//tabbar
+"tabbar"="YYTabBar";
+"tabbar_common"="TabBar的基本样式";
+"tabbar_color_cumstom"="自定义选中颜色";
+"tabbar_with_nav"="TabBar和NavigationBar结合使用";
+"tabbar_irrle"="TabBar不规则排序以及自定义点击事件";
+"tabbar_use"="TabBar的使用";
+"tabbar_index"="默认TabBar下标";
+"tabbar_click_spring"="点击弹簧效果";
+"tabbar_click_bgchange"="背景颜色效果(不带title)";
+"tabbar_click_bgselect"="背景颜色带有弹簧选中效果(不带title)";
+"tabbar_click_bg_spcial"="背景颜色突出显示（不带title）";
+"tabbar_click_y"="暗示用户点击";
+"tabbar_remind_default"="TabBar默认提示框(TabBarBadgeValue内容设置、提示颜色、隐藏)";
+"tabbar_cumston_itemview"="自定义TabBarItemView，可设置字体颜色、图片颜色、设置自定义提示框、提示动作";
+
+
+//pageView
+"pageview"="YYPageView";
+
+//pageMenu
+"pagemenu"="YYPageMenu";
+//refresh
+"refresh"="YYRefresh";
+//ImageLoader
+"imageLoader"="YYImageLoader";
+//dialog
+"dialog"="YYDialog";
+//YYDrawerViewController
+"drawerview"="YYDrawerView";
+//YYHttpUtils
+"httputil"="YYHttpUtils";
+//YYDataShowView
+"datashowview"="YYDataShowView";
+
