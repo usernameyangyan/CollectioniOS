@@ -25,9 +25,9 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 > 6.YYPageView的封装以及使用。  
 > 7.YYPageMenu：滑动菜单的封装以及使用。  
 > 8.YYRefresh:下拉刷新/上拉加载更多控件的封装以及使用。  
-> 9.YYImageLoader:网络图片加载（可加载普通网络图片、gif,可设置缓存时间、缓存大小）。
-> 10.YYDialog:通用提示框的封装、Toast的封装
-> 11.YYHttpUtils:网络请求的封装（普通的网络请求、文件下载、图片上传）
+> 9.YYImageLoader:网络图片加载（可加载普通网络图片、gif,可设置缓存时间、缓存大小）。  
+> 10.YYDialog:通用提示框的封装、Toast的封装  
+> 11.YYHttpUtils:网络请求的封装（普通的网络请求、文件下载、图片上传）  
 > 12.YYDataShowView:数据加载显示样式（没有数据、网络错误、正在加载）
 
 
