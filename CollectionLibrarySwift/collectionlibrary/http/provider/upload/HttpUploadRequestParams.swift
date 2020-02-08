@@ -8,7 +8,7 @@
 
 import Foundation
 
-class HttpUploadRequestParams{
+public class HttpUploadRequestParams{
     
     fileprivate var requestUrl:String = ""
     fileprivate var params: [String:String] = [String:String]()

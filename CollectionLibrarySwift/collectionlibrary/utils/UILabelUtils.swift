@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UILabelUtils{
+public class UILabelUtils{
     
     //动态设置行高的方法
     static func getLabHeigh(labelStr:String,font:UIFont,width:CGFloat,lineSpacing:CGFloat=0) -> CGFloat {

@@ -152,7 +152,7 @@
 		4D8F05F123EB147E006E29DF /* CustomDataShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F05F023EB147E006E29DF /* CustomDataShowView.swift */; };
 		4D8F05F423EB1719006E29DF /* BaseDataShowContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8F05F323EB1719006E29DF /* BaseDataShowContentView.swift */; };
 		4D9048D023CFEEE300CAF308 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9048CF23CFEEE300CAF308 /* AFError.swift */; };
-		4D9048D223CFEF1300CAF308 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9048D123CFEF1300CAF308 /* Alamofire.swift */; };
+		4D9048D223CFEF1300CAF308 /* YYHttpRequestOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9048D123CFEF1300CAF308 /* YYHttpRequestOperator.swift */; };
 		4D9048D823CFEF7800CAF308 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9048D723CFEF7800CAF308 /* DispatchQueue+Alamofire.swift */; };
 		4D9048E023CFF06F00CAF308 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9048DF23CFF06F00CAF308 /* MultipartFormData.swift */; };
 		4D9048E423CFF0C500CAF308 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9048E323CFF0C500CAF308 /* NetworkReachabilityManager.swift */; };
@@ -460,7 +460,7 @@
 		4D8F05F023EB147E006E29DF /* CustomDataShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDataShowView.swift; sourceTree = "<group>"; };
 		4D8F05F323EB1719006E29DF /* BaseDataShowContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataShowContentView.swift; sourceTree = "<group>"; };
 		4D9048CF23CFEEE300CAF308 /* AFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
-		4D9048D123CFEF1300CAF308 /* Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		4D9048D123CFEF1300CAF308 /* YYHttpRequestOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYHttpRequestOperator.swift; sourceTree = "<group>"; };
 		4D9048D723CFEF7800CAF308 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		4D9048DF23CFF06F00CAF308 /* MultipartFormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
 		4D9048E323CFF0C500CAF308 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
@@ -1165,7 +1165,7 @@
 			isa = PBXGroup;
 			children = (
 				4D9048CF23CFEEE300CAF308 /* AFError.swift */,
-				4D9048D123CFEF1300CAF308 /* Alamofire.swift */,
+				4D9048D123CFEF1300CAF308 /* YYHttpRequestOperator.swift */,
 				4D9048D723CFEF7800CAF308 /* DispatchQueue+Alamofire.swift */,
 				4D9048DF23CFF06F00CAF308 /* MultipartFormData.swift */,
 				4D9048E323CFF0C500CAF308 /* NetworkReachabilityManager.swift */,
@@ -1752,7 +1752,7 @@
 				4DAA3E5C23C45952007793C1 /* CumstonRefreshFooterAnimator.swift in Sources */,
 				4DFC4D8323ABCE04008CC3EB /* TableViewScaleHeaderController.swift in Sources */,
 				4DFC4D7623ABBF84008CC3EB /* ExpandableListController.swift in Sources */,
-				4D9048D223CFEF1300CAF308 /* Alamofire.swift in Sources */,
+				4D9048D223CFEF1300CAF308 /* YYHttpRequestOperator.swift in Sources */,
 				4DD6662923671C660013F79A /* AssociatedKeys.swift in Sources */,
 				4D69F77D23D3FB3700DADC93 /* Pointer+YYConvert.swift in Sources */,
 				4D54DC6623C6FF9C007B2A39 /* YYDialog.swift in Sources */,

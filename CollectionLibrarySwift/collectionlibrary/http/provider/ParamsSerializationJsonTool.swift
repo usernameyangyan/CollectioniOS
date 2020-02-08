@@ -9,7 +9,7 @@
 import Foundation
 
 
-class ParamsSerializationJsonTool{
+public class ParamsSerializationJsonTool{
     public static func paramsSerializationJson(param: [String:Any]) -> String {
         do {
             let data = try JSONSerialization.data(withJSONObject: param, options: JSONSerialization.WritingOptions.prettyPrinted)

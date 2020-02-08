@@ -8,14 +8,14 @@
 
 import UIKit
 
-enum YYDialogAnimationOptions {
+public enum YYDialogAnimationOptions {
     case none
     case zoom        // 先放大，再缩小，再还原
     case topToCenter // 从上到中间
 }
 
 
-class BaseDialogContentView:UIView{
+public class BaseDialogContentView:UIView{
     var _contentWidth:CGFloat  = 300.0
     var _contentHeight:CGFloat = 0
     var animationOption:YYDialogAnimationOptions = .none

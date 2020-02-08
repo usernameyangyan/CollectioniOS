@@ -126,7 +126,7 @@ public enum DownloadStatus {
 }
 
 // MARK: - taskManager
-public class YYHttpDownloadTaskManager {
+class YYHttpDownloadTaskManager {
     fileprivate var downloadRequest: DownloadRequest?
     fileprivate var downloadStatus: DownloadStatus = .suspend
     fileprivate var cancelCompletion: (()->())?

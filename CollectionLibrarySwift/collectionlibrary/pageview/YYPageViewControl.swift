@@ -10,7 +10,7 @@ import UIKit
 
 
 @IBDesignable
-class YYPageViewControl:UIControl{
+public class YYPageViewControl:UIControl{
     
     @IBInspectable
     open var numberOfPages: Int = 0 {

@@ -16,7 +16,7 @@ import UIKit
 }
 
 
-class CommonCollectionViewLayout: UICollectionViewFlowLayout {
+public class CommonCollectionViewLayout: UICollectionViewFlowLayout {
 
     
     //代理
@@ -71,7 +71,7 @@ class CommonCollectionViewLayout: UICollectionViewFlowLayout {
     
     
     //MARK: Override
-    override var collectionViewContentSize: CGSize {
+    override public var collectionViewContentSize: CGSize {
         var maxHeight: CGFloat = 0
         for height in columnHeights.values {
             if height > maxHeight {
@@ -81,7 +81,7 @@ class CommonCollectionViewLayout: UICollectionViewFlowLayout {
         return CGSize.init(width: collectionView?.frame.width ?? 0, height: maxHeight + sectionInsets.bottom)
     }
     
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         guard collectionView != nil else {
             return
@@ -100,7 +100,7 @@ class CommonCollectionViewLayout: UICollectionViewFlowLayout {
         }
     }
     
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    override public func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         if let collectionView = collectionView {
             //根据indexPath获取item的attributes
             let att = UICollectionViewLayoutAttributes.init(forCellWith: indexPath)
@@ -139,7 +139,7 @@ class CommonCollectionViewLayout: UICollectionViewFlowLayout {
         return nil
     }
     
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         return attributes
     }
     

@@ -11,7 +11,7 @@ import UIKit
 var instance: NavigationUtils?
 var vc:UIViewController?
 
-class NavigationUtils{
+public class NavigationUtils{
     
     class func with(controller:UIViewController) -> NavigationUtils {
         if (instance == nil) {

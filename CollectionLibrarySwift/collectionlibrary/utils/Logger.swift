@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Logger {
+public struct Logger {
     private static func _log<T>(_ title: String, _ msg: T) {
         #if DEBUG
         print("\(title)：\(msg)")

@@ -13,13 +13,13 @@ import UIKit
 fileprivate let UserLanguage   = "UserLanguage"
 fileprivate let AppleLanguages = "AppleLanguages"
 
-enum LanguageType: Int {
+public enum LanguageType: Int {
     case Chinese = 0
     case English = 1
     case Traditional = 2
 }
 
-class InternationalUtils{
+public class InternationalUtils{
     
     /// 单例
     static var getInstance: InternationalUtils {

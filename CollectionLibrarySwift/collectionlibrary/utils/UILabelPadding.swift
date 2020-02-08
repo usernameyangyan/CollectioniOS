@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UILabelPadding: UILabel {
+public class UILabelPadding: UILabel {
     
     var topInset: CGFloat
     var bottomInset: CGFloat
@@ -27,12 +27,12 @@ class UILabelPadding: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func drawText(in rect: CGRect) {
+    override public func drawText(in rect: CGRect) {
         let insets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
         super.drawText(in: rect.inset(by: insets))
     }
     
-    override var intrinsicContentSize: CGSize {
+    override public var intrinsicContentSize: CGSize {
         get {
             var contentSize = super.intrinsicContentSize
             contentSize.height += topInset + bottomInset

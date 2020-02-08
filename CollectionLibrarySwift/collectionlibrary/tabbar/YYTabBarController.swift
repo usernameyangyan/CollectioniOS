@@ -13,7 +13,7 @@ public typealias YYTabBarControllerShouldHijackHandler = ((_ tabBarController: U
 /// 自定义点击事件回调类型
 public typealias YYTabBarControllerDidHijackHandler = ((_ tabBarController: UITabBarController, _ viewController: UIViewController, _ index: Int) -> (Void))
 
-class YYTabBarController:UITabBarController, YYTabBarDelegate {
+public class YYTabBarController:UITabBarController, YYTabBarDelegate {
 
     /// 打印异常
        public static func printError(_ description: String) {

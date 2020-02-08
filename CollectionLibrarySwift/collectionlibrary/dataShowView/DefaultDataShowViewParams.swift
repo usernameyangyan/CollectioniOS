@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DefaultDataShowViewParams{
+public class DefaultDataShowViewParams{
     
     enum ShowViewType{
         case noData

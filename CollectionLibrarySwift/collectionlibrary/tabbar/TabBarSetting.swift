@@ -9,7 +9,7 @@
 import UIKit
 
 
-class TabBarSetting{
+public class TabBarSetting{
     
     private var vc:YYTabBarController
     private var tabBarBarBasicParamBuilder:TabBarBasicParamBuilder

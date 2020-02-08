@@ -36,7 +36,7 @@ class YYHttpUploadManager{
 
 
 // MARK: - taskManager
-public class YYHttpUploadloadTaskManager {
+class YYHttpUploadloadTaskManager {
     
     
     open func build(){}

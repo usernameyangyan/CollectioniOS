@@ -6,7 +6,7 @@
 //  Copyright © 2020 YoungManSter. All rights reserved.
 //
 
-class YYDataShowView:UIView{
+public class YYDataShowView:UIView{
     typealias YYReloadAction = () -> Void
     fileprivate var reloadHandler: YYReloadAction?
     

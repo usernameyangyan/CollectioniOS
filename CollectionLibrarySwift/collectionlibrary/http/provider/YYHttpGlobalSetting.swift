@@ -9,7 +9,7 @@
 import Foundation
 
 
-class YYHttpGlobalSetting{
+public class YYHttpGlobalSetting{
     
     public  static var showHttpRequestLog:Bool=false
     

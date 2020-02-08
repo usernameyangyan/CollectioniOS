@@ -9,7 +9,7 @@
 import UIKit
 
 
-class PositionSettingUtils{
+public class PositionSettingUtils{
     
     public enum PositionStype : Int {
         case fixed

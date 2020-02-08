@@ -7,7 +7,7 @@
 //
 //
 import UIKit
-class IPhoneUtils{
+open class IPhoneUtils{
     static var BAR_HEIGHT:CGFloat=isIphoneX() ? 88 : 64
     
     //获取顶部导航栏高度

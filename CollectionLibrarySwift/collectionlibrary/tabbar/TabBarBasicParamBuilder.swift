@@ -60,7 +60,7 @@ public enum TabBarClickAnimationStyle : Int {
 }
 
 //MARK：使用默认还是自定义
-class TabBarBasicParamBuilder{
+public class TabBarBasicParamBuilder{
     
     
     class func with(childVCs: [UIViewController],normalImgs:[String],selectImgs:[String],titles:[String]) -> TabBarBasicParamBuilder{

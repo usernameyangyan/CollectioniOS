@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ColorUtils{
+open class ColorUtils{
     //MARK:item或者按钮点击颜色变化
     static func clickSelectBgChange(view:UIView,selectColor:UIColor,unSelectColor:UIColor){
         view.backgroundColor = selectColor

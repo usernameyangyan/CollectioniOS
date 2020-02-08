@@ -8,6 +8,6 @@
 
 import Foundation
 
-class BaseDataShowContentView:UIView{
+public class BaseDataShowContentView:UIView{
     var _contentHeight:CGFloat  = 300.0
 }

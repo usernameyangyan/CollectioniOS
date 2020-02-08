@@ -8,7 +8,7 @@
 
 import Foundation
 
-class YYHttpDowloadUtils{
+public class YYHttpDowloadUtils{
     
     
     typealias HttpSuccessResultBlock = ((_ requestSuccessResult:String)->Void)?
@@ -17,7 +17,7 @@ class YYHttpDowloadUtils{
     typealias HttpDownloadResumeBlock = (()->Void)?
     
     
-    public static func download(httpDownloadRequestParams:HttpDownloadRequestParams,requestSuccessResult:HttpSuccessResultBlock,requestFailureResult:HttpFailureResultBlock,downloadProgress:HttpDownloadProgressBlock){
+    static func download(httpDownloadRequestParams:HttpDownloadRequestParams,requestSuccessResult:HttpSuccessResultBlock,requestFailureResult:HttpFailureResultBlock,downloadProgress:HttpDownloadProgressBlock){
         let url=httpDownloadRequestParams.getReqUrl()
         var method: HTTPMethod = .get
         var encoding: ParameterEncoding = URLEncoding.default
@@ -69,7 +69,7 @@ class YYHttpDowloadUtils{
     }
     
     
-    public static func resume(url:String,downloadResume:HttpDownloadResumeBlock){
+    static func resume(url:String,downloadResume:HttpDownloadResumeBlock){
         downloadProgress(url, progress: {
             progress in
             downloadResume!()
@@ -82,12 +82,12 @@ class YYHttpDowloadUtils{
     /// 取消下载
     ///
     /// - Parameter url: url
-    public static func downloadCancel(_ url: String, parameters: Parameters? = nil, dynamicParams: Parameters? = nil) {
+    static func downloadCancel(_ url: String, parameters: Parameters? = nil, dynamicParams: Parameters? = nil) {
         YYHttpDownloadManager.default.cancel(url, parameters: parameters, dynamicParams: dynamicParams)
     }
     
     /// Cancel all download tasks
-    public static func downloadCancelAll() {
+    static func downloadCancelAll() {
         YYHttpDownloadManager.default.cancelAll();
     }
     
@@ -95,7 +95,7 @@ class YYHttpDowloadUtils{
     ///
     /// - Parameter url: url
     /// - Returns: percent
-    public static func downloadPercent(_ url: String, parameters: Parameters? = nil, dynamicParams: Parameters? = nil) -> Double {
+    static func downloadPercent(_ url: String, parameters: Parameters? = nil, dynamicParams: Parameters? = nil) -> Double {
         return YYHttpDownloadManager.default.downloadPercent(url, parameters: parameters, dynamicParams: dynamicParams)
     }
     
@@ -104,7 +104,7 @@ class YYHttpDowloadUtils{
     /// - Parameters:
     ///   - url: url
     ///   - completion: download success/failure
-    public static func downloadDelete(_ url: String, parameters: Parameters? = nil,dynamicParams: Parameters? = nil, completion: @escaping (Bool)->()) {
+    static func downloadDelete(_ url: String, parameters: Parameters? = nil,dynamicParams: Parameters? = nil, completion: @escaping (Bool)->()) {
         YYHttpDownloadManager.default.delete(url,parameters: parameters,dynamicParams: dynamicParams, completion: completion)
     }
     
@@ -112,7 +112,7 @@ class YYHttpDowloadUtils{
     ///
     /// - Parameter url: url
     /// - Returns: status
-    public static func downloadStatus(_ url: String, parameters: Parameters? = nil,dynamicParams: Parameters? = nil) -> DownloadStatus {
+    static func downloadStatus(_ url: String, parameters: Parameters? = nil,dynamicParams: Parameters? = nil) -> DownloadStatus {
         return YYHttpDownloadManager.default.downloadStatus(url, parameters: parameters,dynamicParams: dynamicParams)
     }
     
@@ -120,7 +120,7 @@ class YYHttpDowloadUtils{
     ///
     /// - Parameter url: url
     /// - Returns: file URL
-    public static func downloadFilePath(_ url: String, parameters: Parameters? = nil,dynamicParams: Parameters? = nil) -> URL? {
+    static func downloadFilePath(_ url: String, parameters: Parameters? = nil,dynamicParams: Parameters? = nil) -> URL? {
         return YYHttpDownloadManager.default.downloadFilePath(url, parameters: parameters,dynamicParams: dynamicParams)
     }
     

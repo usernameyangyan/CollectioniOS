@@ -8,7 +8,7 @@
 
 import Foundation
 
-class HttpDownloadRequestParams{
+public class HttpDownloadRequestParams{
     
     enum HttpTypeAndReqParamType{
         case post_json

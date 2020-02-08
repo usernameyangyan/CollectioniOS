@@ -9,13 +9,13 @@
 import Foundation
 
 
-class YYHttpUploadUtils<T:Convertible>{
+public class YYHttpUploadUtils<T:Convertible>{
     typealias HttpSuccessResultBlock = ((_ requestSuccessResult:T)->Void)?
     typealias HttpFailureResultBlock = ((_ requestFailureResult:String)->Void)?
     typealias HttpProgressResultBlock = ((_ requestProgress:Double)->Void)?
     
     
-    public static func upload(httpRequestParams:HttpUploadRequestParams,requestSuccessResult:HttpSuccessResultBlock,requestFailureResult:HttpFailureResultBlock,requestProgress:HttpProgressResultBlock){
+    static func upload(httpRequestParams:HttpUploadRequestParams,requestSuccessResult:HttpSuccessResultBlock,requestFailureResult:HttpFailureResultBlock,requestProgress:HttpProgressResultBlock){
         
         
         let url=httpRequestParams.getReqUrl()

@@ -8,17 +8,17 @@
 
 import UIKit
 
-class YYDialog{
+public class YYDialog{
     
-    public static func createAlertDialog()->YYAlertDialog{
+    static func createAlertDialog()->YYAlertDialog{
         return YYAlertDialog()
     }
     
-    public static func createLoadingDialog()->YYLoadingDialog{
+    static func createLoadingDialog()->YYLoadingDialog{
         return YYLoadingDialog()
     }
     
-    public static func createToast()->YYToast{
+    static func createToast()->YYToast{
         return YYToast()
     }
     
