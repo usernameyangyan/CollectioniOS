@@ -5,5 +5,5 @@ Pods
 project.xcworkspace
 xcuserdata
 UserInterfaceState.xcuserstate
-.podspec
+*.podspec
 .DS_Store
