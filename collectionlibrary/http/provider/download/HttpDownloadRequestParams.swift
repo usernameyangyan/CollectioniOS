@@ -103,6 +103,6 @@ public class HttpDownloadRequestParams{
     }
     
     
-    func build(){
+    public func build(){
     }
 }

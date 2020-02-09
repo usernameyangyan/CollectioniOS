@@ -232,7 +232,7 @@ public class DefaultDataShowViewParams{
         return defaulutShowLoadingImgsTimeInterval
     }
     
-    func build(){}
+    public func build(){}
     
     
 }

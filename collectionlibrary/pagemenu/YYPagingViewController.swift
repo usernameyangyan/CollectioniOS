@@ -66,7 +66,7 @@ public class YYPagingViewController: UIViewController {
       
     }
     
-    func initController(viewControllers: [UIViewController]){
+    public func initController(viewControllers: [UIViewController]){
         // 存储
         self.viewControllers = viewControllers
         setup()

@@ -91,7 +91,7 @@ public class HttpUploadRequestParams{
     }
     
     
-    func build(){
+    public func build(){
         
         
     }

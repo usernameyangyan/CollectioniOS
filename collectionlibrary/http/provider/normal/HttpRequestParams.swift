@@ -131,7 +131,7 @@ open class HttpRequestParams{
     }
 
     
-    func build(){
+    public func build(){
         
         
     }

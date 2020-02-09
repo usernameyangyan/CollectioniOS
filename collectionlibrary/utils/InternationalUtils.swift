@@ -36,13 +36,13 @@ public class InternationalUtils{
     ///
     /// - Parameter key: key
     /// - Returns: 国际化语言
-    func getString(_ key: String) -> String {
+    public func getString(_ key: String) -> String {
         let bundle = InternationalUtils.getInstance.bundle
         let str = bundle?.localizedString(forKey: key, value: nil, table: nil)
         return str ?? ""
     }
     
-    func getString(_ tableName : String,_ key: String) -> String {
+    public func getString(_ tableName : String,_ key: String) -> String {
         let bundle = InternationalUtils.getInstance.bundle
         let str = bundle?.localizedString(forKey: key, value: nil, table: tableName)
         return str ?? ""
@@ -50,7 +50,7 @@ public class InternationalUtils{
     
     
     /// 初始化语言 Appdelegate 中使用,建议在Window加载前调用，就不会出现因为加载过快导致第一个界面语言没有国际化的现象
-    func initUserLanguage() {
+    public func initUserLanguage() {
         var str = UserDefaults.standard.value(forKey: UserLanguage) as? String
         if str?.count == 0 || str == nil {
             let languages = UserDefaults.standard.object(forKey: AppleLanguages) as? NSArray
@@ -84,7 +84,7 @@ public class InternationalUtils{
     /// 设置当前语言
     ///
     /// - Parameter language: 当前语言
-   func setLanguage(_ type: LanguageType,_ rootViewController:UIViewController) {
+   public func setLanguage(_ type: LanguageType,_ rootViewController:UIViewController) {
         var str = ""
         switch type {
         case .Chinese:
@@ -107,7 +107,7 @@ public class InternationalUtils{
     /// 当前语言
     ///
     /// - Returns: 当前语言类型
-    func getCurrentLanguage() -> String {
+    public func getCurrentLanguage() -> String {
         return UserDefaults.standard.value(forKey: UserLanguage) as! String
     }
     

@@ -20,7 +20,7 @@ open class CommonCollectionViewLayout: UICollectionViewFlowLayout {
 
     
     //代理
-    weak var delegate: CommonCollectionViewLayoutDelegate?
+    open weak var delegate: CommonCollectionViewLayoutDelegate?
     //行间距
     @IBInspectable var lineSpacing: CGFloat   = 0
     //列间距

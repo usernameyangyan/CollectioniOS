@@ -272,7 +272,7 @@ public class YYPageViewControl:UIControl{
         CATransaction.commit()
     }
     
-    func cleanUp(){
+    public func cleanUp(){
            setStrokeColor(nil, for: .normal)
            setStrokeColor(nil, for: .selected)
            setFillColor(nil, for: .normal)
