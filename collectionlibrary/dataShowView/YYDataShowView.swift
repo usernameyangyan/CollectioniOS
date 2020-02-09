@@ -80,9 +80,14 @@ public class YYDataShowView:UIView{
             let height=UILabelUtils.getLabHeigh(labelStr: text, font: UIFont.systemFont(ofSize: defaultDataShowViewParams.getDefaultShowTextSize()), width: UIScreen.main.bounds.width-40,lineSpacing: 10)
             centerView.addSubview(showText)
             
+            var spce:CGFloat=0
+            if(imgHeight != 0){
+                spce=10
+            }
+            
             showText
                 .centerX(equalTo: centerView.yy_centerX)
-                .top(equalTo: showImg.yy_bottom,constant: 10)
+                .top(equalTo: showImg.yy_bottom,constant: spce)
                 .height(height)
                 .build()
             
@@ -126,24 +131,34 @@ public class YYDataShowView:UIView{
             let showImg=UIImageView.init()
             centerView.addSubview(showImg)
             
+            if(defaultDataShowViewParams.getDefaultLoadingImags().count>0){
+                showImg.isHidden=false
+                
+                showImg.animationDuration = defaultDataShowViewParams.getDefaulutShowLoadingImgsTimeInterval()
+                
+                
+                var animationImages:[UIImage]=[UIImage]()
+                
+                for i in 0...(defaultDataShowViewParams.getDefaultLoadingImags().count-1){
+                    let img=UIImage(named: defaultDataShowViewParams.getDefaultLoadingImags()[i])
+                    if(img != nil){
+                        animationImages.append(img!)
+                    }
+                }
+                
+                showImg.animationImages = animationImages
+                showImg.startAnimating()
+            }else{
+                showImg.isHidden=true
+                imgHeight=0
+            }
+            
             showImg
                 .centerX(equalTo: centerView.yy_centerX)
                 .top(equalTo: centerView.yy_top)
                 .height(imgHeight)
                 .width(defaultDataShowViewParams.getDefaultShowImgWidth())
                 .build()
-            
-            showImg.animationDuration = defaultDataShowViewParams.getDefaulutShowLoadingImgsTimeInterval()
-            
-            
-            var animationImages:[UIImage]=[UIImage]()
-            
-            for i in 0...(defaultDataShowViewParams.getDefaultLoadingImags().count-1){
-                animationImages.append(UIImage(named: defaultDataShowViewParams.getDefaultLoadingImags()[i])!)
-            }
-            
-            showImg.animationImages = animationImages
-            showImg.startAnimating()
             
             
             text=defaultDataShowViewParams.getDefaultShowLoadingText()
@@ -152,9 +167,14 @@ public class YYDataShowView:UIView{
             let height=UILabelUtils.getLabHeigh(labelStr: text, font: UIFont.systemFont(ofSize: defaultDataShowViewParams.getDefaultShowTextSize()), width: UIScreen.main.bounds.width-40,lineSpacing: 10)
             centerView.addSubview(showText)
             
+            var spce:CGFloat=0
+            if(imgHeight != 0){
+                spce=10
+            }
+            
             showText
                 .centerX(equalTo: centerView.yy_centerX)
-                .top(equalTo: showImg.yy_bottom,constant: 10)
+                .top(equalTo: showImg.yy_bottom,constant: spce)
                 .height(height)
                 .build()
             
@@ -197,6 +217,7 @@ public class YYDataShowView:UIView{
         self.isHidden=true
         self.removeFromSuperview()
     }
+    
     
     
     @objc func clikButtons(tap:UITapGestureRecognizer) {

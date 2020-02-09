@@ -21,8 +21,8 @@ public class DefaultDataShowViewParams{
     }
     
     fileprivate var showViewType:ShowViewType = .noData
-    fileprivate var defaultNoDataShowImg="nodata"
-    fileprivate var defaultNoNetworkShowImg="nonetwork"
+    fileprivate var defaultNoDataShowImg=""
+    fileprivate var defaultNoNetworkShowImg=""
     fileprivate var defaultImgWidth:CGFloat=150
     fileprivate var defaultImgHeight:CGFloat=150
     fileprivate var defaultShowNoDataText:String="暂无数据"
@@ -40,7 +40,7 @@ public class DefaultDataShowViewParams{
     fileprivate var isHiddenShowButton:Bool=false
     fileprivate var defaultShowButtonBackgroundColor:UIColor=UIColor.clear
     fileprivate var defaulutShowLoadingImgsTimeInterval:TimeInterval=1
-    fileprivate var defaultLoadingImags:[String]=["default_data_show_loading2","default_data_show_loading3","default_data_show_loading4","default_data_show_loading5","default_data_show_loading6","default_data_show_loading7","default_data_show_loading8","default_data_show_loading9","default_data_show_loading10","default_data_show_loading11","default_data_show_loading12"]
+    fileprivate var defaultLoadingImags:[String]=[]
     
     public func setDefaultDataShowViewType(showViewType:ShowViewType)->DefaultDataShowViewParams{
         self.showViewType=showViewType

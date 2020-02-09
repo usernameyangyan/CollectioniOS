@@ -23,11 +23,14 @@ class DefaultNoDataViewController:UIViewController{
             .setTitle(title:"默认没有数据加载显示样式(可根据需要修改对应参数)")
             .build()
         
-        
-        dataShowView=YYDataShowView(defaultDataShowViewParams:DefaultDataShowViewParams() ,aboveView: navigation.bar,reloadHandler: {
+        let defaultDataShowViewParams=DefaultDataShowViewParams()
+        defaultDataShowViewParams
+            .setDefaultNoDataShowImg(defaultNoDataShowImg: "nodata")
+            .build()
+        dataShowView=YYDataShowView(defaultDataShowViewParams:defaultDataShowViewParams,aboveView: navigation.bar,reloadHandler: {
             YYDialog.createToast().show(view: self.view, text: "点击重新加载按钮")
         })
-                
+        
         dataShowView!.show(parentView: self)
     }
 }

@@ -21,11 +21,12 @@ class DefaultNoNetWorkViewController:UIViewController{
             .setBackBarButtonItem(style: .image(UIImage(named: "back_btn")),tintColor: UIColor.gray)
             .setTitle(title:"默认没有网络加载显示样式(可根据需要修改对应参数)")
             .build()
-        
+       
         
         let defaultDataShowViewParams=DefaultDataShowViewParams()
         defaultDataShowViewParams
             .setDefaultDataShowViewType(showViewType: .noNetWork)
+            .setDefaultNoNetworkShowImg(defaultNoNetworkShowImg: "nonetwork")
             .build()
         
         dataShowView=YYDataShowView(defaultDataShowViewParams: defaultDataShowViewParams,aboveView: navigation.bar,reloadHandler: {

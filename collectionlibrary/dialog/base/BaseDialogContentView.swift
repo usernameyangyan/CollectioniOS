@@ -27,7 +27,7 @@ open class BaseDialogContentView:UIView{
     
     
     //销毁视图
-    public func dimiss(){
+    open func dimiss(){
         
         switch animationOption {
         case .none:

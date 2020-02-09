@@ -48,7 +48,7 @@ open class BaseDialog:UIView{
     
     
     //MARK：展现视图
-    public func show(){
+    open func show(){
         
         if(showMaskLayer){
             _effectView.alpha=maskLayerAlpha
