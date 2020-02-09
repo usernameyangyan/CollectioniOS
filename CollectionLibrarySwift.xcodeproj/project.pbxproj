@@ -653,6 +653,7 @@
 		4D2D4F7E234F30E9008B6A82 /* collectionlibrary */ = {
 			isa = PBXGroup;
 			children = (
+				4D1B5E802397F191006BF129 /* CollectionLibrarySwift-Bridging-Header.h */,
 				4DBD288323ED3D7D003688D8 /* headerscale */,
 				4DFF5EC523E9801700A53B65 /* dataShowView */,
 				4D6F89DB23CF650A00F2ECF3 /* http */,
@@ -1470,7 +1471,6 @@
 		4DDEBE8123507B3B0086B406 /* demo */ = {
 			isa = PBXGroup;
 			children = (
-				4D1B5E802397F191006BF129 /* CollectionLibrarySwift-Bridging-Header.h */,
 				4DFF5ECA23E9A54D00A53B65 /* dataShowView */,
 				4D90496323D00A5000CAF308 /* http */,
 				4D54DC6923C70D10007B2A39 /* dialog */,
@@ -2159,7 +2159,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = youngmanster.CollectionLibrarySwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "CollectionLibrarySwift/demo/CollectionLibrarySwift-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "collectionlibrary/CollectionLibrarySwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 5.0;
@@ -2183,7 +2183,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = youngmanster.CollectionLibrarySwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "CollectionLibrarySwift/demo/CollectionLibrarySwift-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "collectionlibrary/CollectionLibrarySwift-Bridging-Header.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
