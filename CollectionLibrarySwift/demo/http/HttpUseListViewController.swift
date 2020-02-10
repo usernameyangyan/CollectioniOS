@@ -48,9 +48,7 @@ class HttpUseListViewController:YYIBaseTableViewController{
                 self?.cellTapEvent(item: selectItem as! CommonTableItem )
             })
         }
-        
-        
-        
+        manager.reloadData()
     }
     
     

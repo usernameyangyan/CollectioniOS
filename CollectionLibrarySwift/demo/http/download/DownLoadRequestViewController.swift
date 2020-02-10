@@ -42,7 +42,7 @@ class DownLoadRequestViewController:YYIBaseTableViewController{
             section.add(item: item)
         }
         
-        
+        manager.reloadData()
     }
     
     

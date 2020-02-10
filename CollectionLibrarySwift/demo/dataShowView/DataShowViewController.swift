@@ -49,6 +49,8 @@ class DataShowViewController:YYIBaseTableViewController{
             })
             
         }
+        
+        manager.reloadData()
     }
     
     

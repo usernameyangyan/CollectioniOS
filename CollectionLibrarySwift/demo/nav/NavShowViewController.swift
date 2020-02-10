@@ -67,6 +67,8 @@ class NavShowViewController:YYIBaseTableViewController{
             
         }
         
+        manager.reloadData()
+        
         
     }
     

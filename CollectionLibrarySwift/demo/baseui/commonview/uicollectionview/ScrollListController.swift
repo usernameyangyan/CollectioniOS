@@ -46,7 +46,7 @@ class ScrollListController:YYIBaseTableViewController{
             
         }
         
-        
+        manager.reloadData()
         
     }
     

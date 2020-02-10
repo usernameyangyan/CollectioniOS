@@ -57,6 +57,8 @@ class TabBarListController:YYIBaseTableViewController{
             })
         }
         
+        manager.reloadData()
+        
     }
     
     

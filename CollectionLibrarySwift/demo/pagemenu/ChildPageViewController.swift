@@ -64,6 +64,8 @@ class ChildPageViewController:YYIBaseTableViewController{
                 self?.cellTapEvent(item: selectItem as! CommonTableItem )
             })
         }
+        
+        manager.reloadData()
     }
     
     

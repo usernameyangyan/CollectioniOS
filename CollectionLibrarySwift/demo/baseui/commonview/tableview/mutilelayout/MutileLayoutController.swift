@@ -44,6 +44,7 @@ class MutileLayoutController:YYIBaseTableViewController{
             
             
         }
+        manager.reloadData()
         
     }
 }

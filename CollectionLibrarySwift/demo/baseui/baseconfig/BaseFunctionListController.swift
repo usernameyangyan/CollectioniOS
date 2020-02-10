@@ -48,6 +48,8 @@ class BaseFunctionController:YYIBaseTableViewController{
             }
         }
         
+        manager.reloadData()
+        
         
         
     }

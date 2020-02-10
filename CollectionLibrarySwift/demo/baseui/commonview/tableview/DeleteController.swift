@@ -42,6 +42,8 @@ class DeleteController:YYIBaseTableViewController{
                 self?.deleteConfirm(item: item as! CommonTableItem)
             })
         }
+        
+        manager.reloadData()
                 
     }
     

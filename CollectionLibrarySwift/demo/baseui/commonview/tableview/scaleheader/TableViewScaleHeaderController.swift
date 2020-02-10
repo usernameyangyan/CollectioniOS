@@ -55,6 +55,8 @@ class TableViewScaleHeaderController:YYIBaseTableViewController{
             section.add(item: item)
         }
         
+        manager.reloadData()
+        
         
     }
 }

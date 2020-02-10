@@ -54,5 +54,7 @@ class ExpandableListController:YYIBaseTableViewController{
                 item1.arrNextLevel.append(item2)
             }
         }
+        
+        manager.reloadData()
     }
 }

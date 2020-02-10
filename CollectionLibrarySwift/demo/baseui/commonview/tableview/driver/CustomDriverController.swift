@@ -46,5 +46,7 @@ class CustomDriverController:YYIBaseTableViewController{
             
         }
         
+        manager.reloadData()
+        
     }
 }

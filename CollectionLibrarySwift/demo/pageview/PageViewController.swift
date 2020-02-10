@@ -152,6 +152,7 @@ class PageViewController:UIViewController,YYPagerViewDataSource,YYPagerViewDeleg
             }
             
         }
+        manager.reloadData()
         
     }
     

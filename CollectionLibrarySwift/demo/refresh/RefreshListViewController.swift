@@ -41,9 +41,11 @@ class RefreshListViewController:YYIBaseTableViewController{
             section.add(item: item)
             
             item.setSelectionHandler(selectHandler: {[weak self](selectItem) in
-                           self?.cellTapEvent(item: selectItem as! CommonTableItem )
-                       })
+                self?.cellTapEvent(item: selectItem as! CommonTableItem )
+            })
         }
+        
+        manager.reloadData()
         
     }
     
