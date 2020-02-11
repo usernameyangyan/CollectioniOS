@@ -382,7 +382,7 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 
 #### 三、UICollectionView/UIScrollView的基础使用
 
-![效果图](https://upload-images.jianshu.io/upload_images/4361802-7cddbf4830bc8913.gif?imageMogr2/auto-orient/strip)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-d3e8ba56eb97be91.gif?imageMogr2/auto-orient/strip)
 
 
 ##### 1. UICollectionView的快速使用
