@@ -7,9 +7,9 @@
 CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间，协助项目的快速搭建,能够满足一个项目的基本实现。
 
 
->###### 简书地址：
+>###### 简书地址：https://www.jianshu.com/p/a445521e70eb
 
->###### 掘金地址：
+>###### 掘金地址：https://juejin.im/post/5e423d4ef265da572a0cec9f
 
 ## 框架的引入
 - pod 'CollectioniOS','~>1.0.8'
@@ -118,7 +118,7 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 #### 一、应用基本配置
 
 ##### 1.应用内国际化语言配置 
-![](https://upload-images.jianshu.io/upload_images/4361802-192e42e96cc33f3e.gif?imageMogr2/auto-orient/strip)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-192e42e96cc33f3e.gif?imageMogr2/auto-orient/strip)
 
 ######  实现流程：
 
@@ -138,7 +138,7 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 
 #### 二、UTTableView的封装使用
 
-![](https://upload-images.jianshu.io/upload_images/4361802-ebd358766adae311.gif?imageMogr2/auto-orient/strip)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-ebd358766adae311.gif?imageMogr2/auto-orient/strip)
 
 ##### 1.YYTableViewManager使用
 -  如果没有什么特别需求的可以直接实现YYIBaseTableViewController，里面已经把基本的封装完成：
@@ -382,7 +382,7 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 
 #### 三、UICollectionView/UIScrollView的基础使用
 
-![](https://upload-images.jianshu.io/upload_images/4361802-7cddbf4830bc8913.gif?imageMogr2/auto-orient/strip)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-7cddbf4830bc8913.gif?imageMogr2/auto-orient/strip)
 
 
 ##### 1. UICollectionView的快速使用
@@ -429,7 +429,7 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 
 #### 四、YYNavigationBar：顶部导航栏
 
-![](https://upload-images.jianshu.io/upload_images/4361802-47ad022c3768ae48.gif?imageMogr2/auto-orient/strip)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-47ad022c3768ae48.gif?imageMogr2/auto-orient/strip)
 
 
 
@@ -480,7 +480,7 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 
 #### 五、YYAutoLayout：自动布局
 
-![](https://upload-images.jianshu.io/upload_images/4361802-56dd37ec3cec2341.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-56dd37ec3cec2341.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 ##### 链式使用
@@ -494,7 +494,7 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 
 #### 六、YYTabBar：底部分页导航栏
 
-![](https://upload-images.jianshu.io/upload_images/4361802-59a45307d66a014b.gif?imageMogr2/auto-orient/strip)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-59a45307d66a014b.gif?imageMogr2/auto-orient/strip)
 
 
 
@@ -695,7 +695,7 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 
 #### 七、YYPageView：图片轮播
 
-![](https://upload-images.jianshu.io/upload_images/4361802-9da329fef7b2347f.gif?imageMogr2/auto-orient/strip)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-9da329fef7b2347f.gif?imageMogr2/auto-orient/strip)
 
 
 
@@ -732,7 +732,7 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 
 #### 八、YYPageMenu：滑动菜单
 
-![](https://upload-images.jianshu.io/upload_images/4361802-7e7caf6ca38cae80.gif?imageMogr2/auto-orient/strip)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-7e7caf6ca38cae80.gif?imageMogr2/auto-orient/strip)
 
 
 
@@ -789,7 +789,7 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 
 #### 九、YYRefresh:下拉刷新/上拉加载更多
 
-![](https://upload-images.jianshu.io/upload_images/4361802-aa7a5280808114bc.gif?imageMogr2/auto-orient/strip)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-aa7a5280808114bc.gif?imageMogr2/auto-orient/strip)
 
 -  使用默认下拉刷新/上拉加载更多样式
 
@@ -840,7 +840,7 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 
 #### 十、YYImageLoader:网络图片加载
 
-![](https://upload-images.jianshu.io/upload_images/4361802-39ebe3bf7e90614a.gif?imageMogr2/auto-orient/strip)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-39ebe3bf7e90614a.gif?imageMogr2/auto-orient/strip)
 
 - 常用的方法
 
@@ -865,7 +865,7 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 
 #### 十一、YYDialog:通用提示框
 
-![](https://upload-images.jianshu.io/upload_images/4361802-7018d399bf12cc83.gif?imageMogr2/auto-orient/strip)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-7018d399bf12cc83.gif?imageMogr2/auto-orient/strip)
 
 - 默认提示框使用
 
@@ -934,7 +934,7 @@ LoadingDialog
 
 #### 十二、YYHttpUtils:网络请求
 
-![](https://upload-images.jianshu.io/upload_images/4361802-76fdc774cf0173bf.gif?imageMogr2/auto-orient/strip)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-76fdc774cf0173bf.gif?imageMogr2/auto-orient/strip)
 
 
 - 基本网络请求
@@ -1072,7 +1072,7 @@ setHttpTypeAndReqParamType(参数)| 设置请求方法以及请求参数类型�
 
 #### 十三、YYDataShowView:数据加载显示页面
 
-![](https://upload-images.jianshu.io/upload_images/4361802-621e2e65ad4801f5.gif?imageMogr2/auto-orient/strip)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-621e2e65ad4801f5.gif?imageMogr2/auto-orient/strip)
 
 
 - YYDataShowView基本用法
