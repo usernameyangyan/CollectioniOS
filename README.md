@@ -695,7 +695,7 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 
 #### 七、YYPageView：图片轮播
 
-![效果图](https://upload-images.jianshu.io/upload_images/4361802-9da329fef7b2347f.gif?imageMogr2/auto-orient/strip)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-d0a295c35e3bfa1c.gif?imageMogr2/auto-orient/strip)
 
 
 
@@ -789,7 +789,7 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 
 #### 九、YYRefresh:下拉刷新/上拉加载更多
 
-![效果图](https://upload-images.jianshu.io/upload_images/4361802-aa7a5280808114bc.gif?imageMogr2/auto-orient/strip)
+![效果图](https://user-gold-cdn.xitu.io/2020/2/11/17033382db40c96f?w=235&h=420&f=gif&s=1239377)
 
 -  使用默认下拉刷新/上拉加载更多样式
 
@@ -840,7 +840,7 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 
 #### 十、YYImageLoader:网络图片加载
 
-![效果图](https://upload-images.jianshu.io/upload_images/4361802-39ebe3bf7e90614a.gif?imageMogr2/auto-orient/strip)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-835a2427319bd920.gif?imageMogr2/auto-orient/strip)
 
 - 常用的方法
 
@@ -865,7 +865,7 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 
 #### 十一、YYDialog:通用提示框
 
-![效果图](https://upload-images.jianshu.io/upload_images/4361802-7018d399bf12cc83.gif?imageMogr2/auto-orient/strip)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-a1c845c4338c08af.gif?imageMogr2/auto-orient/strip)
 
 - 默认提示框使用
 
@@ -1072,7 +1072,7 @@ setHttpTypeAndReqParamType(参数)| 设置请求方法以及请求参数类型�
 
 #### 十三、YYDataShowView:数据加载显示页面
 
-![效果图](https://upload-images.jianshu.io/upload_images/4361802-621e2e65ad4801f5.gif?imageMogr2/auto-orient/strip)
+![效果图](https://upload-images.jianshu.io/upload_images/4361802-5861316f375b5494.gif?imageMogr2/auto-orient/strip)
 
 
 - YYDataShowView基本用法
