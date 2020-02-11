@@ -60,19 +60,19 @@ class HttpUseListViewController:YYIBaseTableViewController{
             navigationController?.pushViewController(DownLoadRequestViewController(), animated: true)
         default:
             
-            let url="xxxxx"
-            let httpParams=HttpUploadRequestParams()
-            httpParams
-                .setParam(key: "type", param: "addroadblock")//设置请求参数也可通过setParams()设置Array
-                .setReqUrl(requestUrl: url) //设置请求链接
-                .setFileSuffixName(fileSuffixName: ".jpg") //设置文件后缀名，后续上传其它文件扩展也可使用
-                .setImages(images: [UIImage(named: "d")!,UIImage(named: "e")!])//设置上传图片列表
-                .setMultiparName(multipartName: "imgList") //设置对应后台服务器上传文件字段
-                .build()
-            
-            /**
-             通过泛型设置结果转换的been类，可返回上传进度
-             */
+//            let url="xxxxx"
+//            let httpParams=HttpUploadRequestParams()
+//            httpParams
+//                .setParam(key: "type", param: "addroadblock")//设置请求参数也可通过setParams()设置Array
+//                .setReqUrl(requestUrl: url) //设置请求链接
+//                .setFileSuffixName(fileSuffixName: ".jpg") //设置文件后缀名，后续上传其它文件扩展也可使用
+//                .setImages(images: [UIImage(named: "d")!,UIImage(named: "e")!])//设置上传图片列表
+//                .setMultiparName(multipartName: "imgList") //设置对应后台服务器上传文件字段
+//                .build()
+//            
+//            /**
+//             通过泛型设置结果转换的been类，可返回上传进度
+//             */
 //            YYHttpUploadUtils<UserInfo>.upload(httpRequestParams: httpParams, requestSuccessResult: {
 //                result in
 //            }, requestFailureResult: {
@@ -82,9 +82,6 @@ class HttpUseListViewController:YYIBaseTableViewController{
 //                progress in
 //            })
             
-//            YYDialog
-//                           .createToast()
-//                           .show(view: self.view, text: "因为你是这个世界上最干净的，最温暖的，最柔软的，我不能用那些通用的所谓聪明来解释你，来对待你，来敷衍你。")
             
             YYDialog.createToast().show(view: self.view, text: "demo没有设置真实的上传测试，可通过查看代码设置")
         }

@@ -121,8 +121,8 @@ class DownloadCell:YYTableViewCell{
     }
     
     
-    override func cellDidAppear() {
-        super.cellDidAppear()
+    override func cellWillAppear() {
+        super.cellWillAppear()
         let item = self.item as! DownloadItem
         YYHttpDowloadUtils.resume(url: item.downloadUrl, downloadResume: {
             self.updateCell()

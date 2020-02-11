@@ -28,11 +28,7 @@ class CumstonSettingItemView:YYTabBarItemContentView{
         self.bounceAnimation()
         completion?()
     }
-
-    override func reselectAnimation(animated: Bool, completion: (() -> ())?) {
-        self.bounceAnimation()
-        completion?()
-    }
+    
     
     func bounceAnimation() {
         let impliesAnimation = CAKeyframeAnimation(keyPath: "transform.scale")

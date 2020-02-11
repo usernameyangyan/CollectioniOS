@@ -32,13 +32,12 @@ class CommonUICollectionViewController:UIViewController{
         flowLayout = CommonCollectionViewLayout.init(lineSpacing: 10, columnSpacing:10, sectionInsets: UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
         flowLayout!.delegate=self
         
-        flowLayout?.estimatedItemSize=CGSize(width: 200, height: 150)
-        
         collectionView=UICollectionView(frame: self.view.frame, collectionViewLayout: self.flowLayout!)
         collectionView!.dataSource=self
         self.collectionView!.delegate=self
         
-        
+        //注册cell
+        self.collectionView!.register(CommonUICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: reuseidentifier)
         
         
         //数据组装
@@ -47,10 +46,6 @@ class CommonUICollectionViewController:UIViewController{
         for i in 0..<50 {
             arrayM!.add(String.init(format: "测试使用%d", i))
         }
-        
-        
-        //注册cell
-        self.collectionView!.register(CommonUICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: reuseidentifier)
         
         
         
