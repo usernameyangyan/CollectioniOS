@@ -702,30 +702,30 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 - 创建PageView
 
 
-    let pageView:YYPageView={
+        let pageView:YYPageView={
         let pageView:YYPageView=YYPageView.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 300))
         pageView.register(YYDefaltPageViewCell.self, forCellWithReuseIdentifier: "cell")
         pageView.transformer = YYPageViewTransformer(type:.none)
         pageView.pageControl.interitemSpacing=10
         return pageView
-    }()
+        }()
 
 - 实现YYPagerViewDataSource,YYPagerViewDelegate
 
 
-    //设置轮滚图片的数量
-    func numberOfItems(in pagerView: YYPageView) -> Int {
+        //设置轮滚图片的数量
+        func numberOfItems(in pagerView: YYPageView) -> Int {
         return imageNames.count
-    }
-    //每个轮滚内容的设定
-    func pagerView(_ pagerView: YYPageView, cellForItemAt index: Int) -> UICollectionViewCell {
-        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index) as! YYDefaltPageViewCell
-        cell.imageView?.image=UIImage(named:imageNames[index] )
-        cell.imageView?.contentMode = .scaleAspectFill
-        cell.imageView?.clipsToBounds = true
-        cell.textLabel?.text = String.init(format: "第%d张图片", index)
-        return cell
-    }
+        }
+        //每个轮滚内容的设定
+        func pagerView(_ pagerView: YYPageView, cellForItemAt index: Int) -> UICollectionViewCell {
+            let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index) as! YYDefaltPageViewCell
+            cell.imageView?.image=UIImage(named:imageNames[index] )
+            cell.imageView?.contentMode = .scaleAspectFill
+            cell.imageView?.clipsToBounds = true
+            cell.textLabel?.text = String.init(format: "第%d张图片", index)
+            return cell
+        }
 
 -  其它用法参照demo
 
