@@ -1507,6 +1507,7 @@
 		4DC1B9A423F9070C00DD07D7 /* mvp */ = {
 			isa = PBXGroup;
 			children = (
+				4DC1B9AA23F918CF00DD07D7 /* IBaseControllerView.swift */,
 				4DC1B9A523F907BF00DD07D7 /* BasePresenter.swift */,
 			);
 			path = mvp;
@@ -1525,7 +1526,6 @@
 			isa = PBXGroup;
 			children = (
 				4DB8B6F723C0DBB100ECEBDE /* AutoHeightUIViewController.swift */,
-				4DC1B9AA23F918CF00DD07D7 /* IBaseControllerView.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
