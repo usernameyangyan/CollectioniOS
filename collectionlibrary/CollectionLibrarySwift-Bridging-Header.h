@@ -11,4 +11,6 @@
 #import "UIView+YYTransplantSubviews.h"
 #import "YYStretchyHeaderView+Protected.h"
 #import "UIScrollView+YYStretchyHeaderView.h"
+#import "SQLite.h"
+#import "fts3_tokenizer.h"
  

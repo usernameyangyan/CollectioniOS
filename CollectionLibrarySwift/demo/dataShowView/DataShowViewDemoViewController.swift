@@ -61,7 +61,7 @@ class DataShowViewDemoViewController:YYIBaseTableViewController{
             .setHttpTypeAndReqParamType(httpTypeAndReqParamType: .get)
             .build()
         
-        YYHttpRequestUtils<Result<Array<ContentInfo>>>.request(httpRequestParams: httpParams, requestSuccessResult: {
+        DataManager.DataForHttp.HttpOfNormal.Request<Result<Array<ContentInfo>>>.request(httpRequestParams: httpParams, requestSuccessResult: {
             value in
             
             

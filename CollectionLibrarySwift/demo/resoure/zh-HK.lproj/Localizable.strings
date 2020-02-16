@@ -88,11 +88,11 @@
 "imageLoader"="YYImageLoader";
 //dialog
 "dialog"="YYDialog";
-//YYDrawerViewController
-"drawerview"="YYDrawerView";
 //YYHttpUtils
-"httputil"="YYHttpUtils";
+"httputil"="DataManager(Http、SQLite、File、UserDefaults)";
 //YYDataShowView
 "datashowview"="YYDataShowView";
+//YYTagView
+"tagview"="YYTagView";
 
 
