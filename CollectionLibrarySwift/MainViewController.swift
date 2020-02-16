@@ -54,6 +54,7 @@ class MainViewController: UIViewController{
         self.arrayM!.add(InternationalUtils.getInstance.getString("httputil"))
         self.arrayM!.add(InternationalUtils.getInstance.getString("datashowview"))
         self.arrayM!.add(InternationalUtils.getInstance.getString("tagview"))
+        self.arrayM!.add(InternationalUtils.getInstance.getString("mvp"))
         
         //注册cell
         self.collectionView!.register(CommonUICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: reuseidentifier)
@@ -126,7 +127,9 @@ extension MainViewController:UICollectionViewDelegate,UICollectionViewDataSource
         case 12:
             navigationController?.pushViewController(DataShowViewController(), animated: true)
         case 13:
-             navigationController?.pushViewController(TagViewControllerView(), animated: true)
+            navigationController?.pushViewController(TagViewControllerView(), animated: true)
+        case 14:
+            navigationController?.pushViewController(MVPUseControllerView(), animated: true)
         default:
             break
         }

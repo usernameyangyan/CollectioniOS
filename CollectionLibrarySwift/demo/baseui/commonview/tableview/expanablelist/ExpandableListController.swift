@@ -8,11 +8,17 @@
 
 import UIKit
 
-class ExpandableListController:YYIBaseTableViewController{
+class ExpandableListController:AutoHeightUIViewController{
     
+    var tableView: UITableView!
+    var manager: YYTableViewManager!
+    var tableViewStyle: UITableView.Style = UITableView.Style.plain
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView = UITableView(frame: self.view.bounds, style: self.tableViewStyle)
+        self.view.addSubview(self.tableView);
+        self.manager = YYTableViewManager(tableView: self.tableView)
         
         self.view.backgroundColor=UIColor.white
         NavigationUtils
@@ -45,7 +51,7 @@ class ExpandableListController:YYIBaseTableViewController{
             item1.isExpand = false
             section.add(item: item1)
             item0.arrNextLevel.append(item1)
-
+            
             // level 2
             for _ in 0 ..< 3 {
                 let item2 = ExpanableListItem3()

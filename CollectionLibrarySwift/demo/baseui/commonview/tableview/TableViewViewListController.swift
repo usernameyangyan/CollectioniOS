@@ -8,12 +8,20 @@
 
 import UIKit
 
-class TableViewViewListController:YYIBaseTableViewController{
+class TableViewViewListController:AutoHeightUIViewController{
     
     var arrayM:NSMutableArray?
+    var tableView: UITableView!
+    var manager: YYTableViewManager!
+    var tableViewStyle: UITableView.Style = UITableView.Style.plain
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor=UIColor.white
+        self.tableView = UITableView(frame: self.view.bounds, style: self.tableViewStyle)
+        self.view.addSubview(self.tableView);
+        self.manager = YYTableViewManager(tableView: self.tableView)
         
         NavigationUtils
             .with(controller: self)

@@ -8,15 +8,26 @@
 
 import Foundation
 
-class DownLoadRequestViewController:YYIBaseTableViewController{
+class DownLoadRequestViewController:AutoHeightUIViewController{
     
     
     var arrayM:NSMutableArray?
     
+    var tableView: UITableView!
+    var manager: YYTableViewManager!
+    var tableViewStyle: UITableView.Style = UITableView.Style.plain
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView = UITableView(frame: self.view.bounds, style: self.tableViewStyle)
+        self.view.addSubview(self.tableView);
+        self.manager = YYTableViewManager(tableView: self.tableView)
+        
         self.view.backgroundColor=UIColor.white
+    
+        manager.register(ShowCell.self, ContentInfo.self)
+        tableView.separatorStyle = .none
         
         NavigationUtils
             .with(controller: self)

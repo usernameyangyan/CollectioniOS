@@ -8,10 +8,14 @@
 
 import UIKit
 
-class ChildPageViewController:YYIBaseTableViewController{
+class ChildPageViewController:AutoHeightUIViewController{
     
     var arrayM:NSMutableArray?
     var pageMenuVc:PageMenuController?
+    
+    var tableView: UITableView!
+    var manager: YYTableViewManager!
+    var tableViewStyle: UITableView.Style = UITableView.Style.plain
     
     
     init(pageMenuVc:PageMenuController){
@@ -27,6 +31,10 @@ class ChildPageViewController:YYIBaseTableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView = UITableView(frame: self.view.bounds, style: self.tableViewStyle)
+        self.view.addSubview(self.tableView);
+        self.manager = YYTableViewManager(tableView: self.tableView)
         
         NavigationUtils
             .with(controller: self)

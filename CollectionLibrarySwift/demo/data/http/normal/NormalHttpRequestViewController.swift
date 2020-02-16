@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NormalHttpRequestViewController:YYIBaseTableViewController{
+class NormalHttpRequestViewController:AutoHeightUIViewController{
     
     let dialog = YYDialog
         .createLoadingDialog()
@@ -18,10 +18,18 @@ class NormalHttpRequestViewController:YYIBaseTableViewController{
     var pageNow:Int=1
     let section:YYTableViewSection = YYTableViewSection()
     
+    var tableView: UITableView!
+    var manager: YYTableViewManager!
+    var tableViewStyle: UITableView.Style = UITableView.Style.plain
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor=UIColor.white
+        
+        self.tableView = UITableView(frame: self.view.bounds, style: self.tableViewStyle)
+        self.view.addSubview(self.tableView);
+        self.manager = YYTableViewManager(tableView: self.tableView)
         
         NavigationUtils
             .with(controller: self)

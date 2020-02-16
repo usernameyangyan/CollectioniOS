@@ -8,13 +8,22 @@
 
 import UIKit
 
-class DialogViewController:YYIBaseTableViewController{
+class DialogViewController:AutoHeightUIViewController{
+    
+    var tableView: UITableView!
+    var manager: YYTableViewManager!
+    var tableViewStyle: UITableView.Style = UITableView.Style.plain
     
     var arrayM:NSMutableArray?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor=UIColor.white
+        
+        self.tableView = UITableView(frame: self.view.bounds, style: self.tableViewStyle)
+        self.view.addSubview(self.tableView);
+        self.manager = YYTableViewManager(tableView: self.tableView)
         
         NavigationUtils
             .with(controller: self)

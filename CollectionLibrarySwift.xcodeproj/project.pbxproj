@@ -110,7 +110,6 @@
 		4D66859C23A9C5C1009F0309 /* YYTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66859B23A9C5C1009F0309 /* YYTableViewCell.swift */; };
 		4D66859E23A9C62D009F0309 /* YYTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66859D23A9C62D009F0309 /* YYTableViewItem.swift */; };
 		4D6685A023A9C708009F0309 /* YYTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66859F23A9C708009F0309 /* YYTableViewSection.swift */; };
-		4D6685A623A9D446009F0309 /* YYIBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6685A523A9D446009F0309 /* YYIBaseTableViewController.swift */; };
 		4D6685BD23AA1B36009F0309 /* YYAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6685BC23AA1B36009F0309 /* YYAutoLayout.swift */; };
 		4D69F76F23D3F80900DADC93 /* ConvertibleEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69F76E23D3F80900DADC93 /* ConvertibleEnum.swift */; };
 		4D69F77123D3F85400DADC93 /* Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69F77023D3F85400DADC93 /* Convertible.swift */; };
@@ -276,6 +275,10 @@
 		4DBD289E23ED4149003688D8 /* UIScrollView+YYStretchyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD289D23ED4149003688D8 /* UIScrollView+YYStretchyHeaderView.m */; };
 		4DBD28A723ED84EF003688D8 /* CommonCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD28A623ED84EF003688D8 /* CommonCollectionViewLayout.swift */; };
 		4DC1B9A323F8F7F100DD07D7 /* DataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1B9A223F8F7F100DD07D7 /* DataResult.swift */; };
+		4DC1B9A623F907BF00DD07D7 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1B9A523F907BF00DD07D7 /* BasePresenter.swift */; };
+		4DC1B9A923F90B4300DD07D7 /* MVPUseControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1B9A823F90B4300DD07D7 /* MVPUseControllerView.swift */; };
+		4DC1B9AB23F918CF00DD07D7 /* IBaseControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1B9AA23F918CF00DD07D7 /* IBaseControllerView.swift */; };
+		4DC1B9AD23F919ED00DD07D7 /* MvpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1B9AC23F919ED00DD07D7 /* MvpPresenter.swift */; };
 		4DC4D3B023E859C2000C6EBA /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4D3AF23E859C2000C6EBA /* Result.swift */; };
 		4DC6DE0B23A86475004EFD8C /* UILabelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC6DE0A23A86475004EFD8C /* UILabelUtils.swift */; };
 		4DC6DE0F23A87A77004EFD8C /* TableViewViewListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC6DE0E23A87A77004EFD8C /* TableViewViewListController.swift */; };
@@ -443,7 +446,6 @@
 		4D66859B23A9C5C1009F0309 /* YYTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYTableViewCell.swift; sourceTree = "<group>"; };
 		4D66859D23A9C62D009F0309 /* YYTableViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYTableViewItem.swift; sourceTree = "<group>"; };
 		4D66859F23A9C708009F0309 /* YYTableViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYTableViewSection.swift; sourceTree = "<group>"; };
-		4D6685A523A9D446009F0309 /* YYIBaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYIBaseTableViewController.swift; sourceTree = "<group>"; };
 		4D6685BC23AA1B36009F0309 /* YYAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYAutoLayout.swift; sourceTree = "<group>"; };
 		4D69F76E23D3F80900DADC93 /* ConvertibleEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertibleEnum.swift; sourceTree = "<group>"; };
 		4D69F77023D3F85400DADC93 /* Convertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convertible.swift; sourceTree = "<group>"; };
@@ -618,6 +620,10 @@
 		4DBD289D23ED4149003688D8 /* UIScrollView+YYStretchyHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+YYStretchyHeaderView.m"; sourceTree = "<group>"; };
 		4DBD28A623ED84EF003688D8 /* CommonCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCollectionViewLayout.swift; sourceTree = "<group>"; };
 		4DC1B9A223F8F7F100DD07D7 /* DataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResult.swift; sourceTree = "<group>"; };
+		4DC1B9A523F907BF00DD07D7 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		4DC1B9A823F90B4300DD07D7 /* MVPUseControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPUseControllerView.swift; sourceTree = "<group>"; };
+		4DC1B9AA23F918CF00DD07D7 /* IBaseControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBaseControllerView.swift; sourceTree = "<group>"; };
+		4DC1B9AC23F919ED00DD07D7 /* MvpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvpPresenter.swift; sourceTree = "<group>"; };
 		4DC4D3AF23E859C2000C6EBA /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		4DC6DE0A23A86475004EFD8C /* UILabelUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelUtils.swift; sourceTree = "<group>"; };
 		4DC6DE0E23A87A77004EFD8C /* TableViewViewListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewListController.swift; sourceTree = "<group>"; };
@@ -704,6 +710,8 @@
 		4D2D4F7E234F30E9008B6A82 /* collectionlibrary */ = {
 			isa = PBXGroup;
 			children = (
+				4DC1B9AE23F91AD700DD07D7 /* base */,
+				4DC1B9A423F9070C00DD07D7 /* mvp */,
 				4D3C6CCC23F6EACE00786982 /* tagview */,
 				4D38D07023F640FF00D6F53F /* async */,
 				4DEF468023F395F200E99FB8 /* data */,
@@ -1162,7 +1170,6 @@
 				4D66859B23A9C5C1009F0309 /* YYTableViewCell.swift */,
 				4D66859D23A9C62D009F0309 /* YYTableViewItem.swift */,
 				4D66859F23A9C708009F0309 /* YYTableViewSection.swift */,
-				4D6685A523A9D446009F0309 /* YYIBaseTableViewController.swift */,
 				4DFC4D7E23ABC5D8008CC3EB /* YYExpandTreeCellItem.swift */,
 			);
 			path = customtableview;
@@ -1443,7 +1450,6 @@
 				4DA9D26C23BE27B00028B51D /* YYPageMeun.swift */,
 				4DA9D26E23BE28750028B51D /* YYPageMeunEnum.swift */,
 				4DA9D27023BE28DF0028B51D /* YYPagingViewController.swift */,
-				4DB8B6F723C0DBB100ECEBDE /* AutoHeightUIViewController.swift */,
 			);
 			path = pagemenu;
 			sourceTree = "<group>";
@@ -1496,6 +1502,40 @@
 				4DBD289D23ED4149003688D8 /* UIScrollView+YYStretchyHeaderView.m */,
 			);
 			path = headerscale;
+			sourceTree = "<group>";
+		};
+		4DC1B9A423F9070C00DD07D7 /* mvp */ = {
+			isa = PBXGroup;
+			children = (
+				4DC1B9A523F907BF00DD07D7 /* BasePresenter.swift */,
+			);
+			path = mvp;
+			sourceTree = "<group>";
+		};
+		4DC1B9A723F90B2800DD07D7 /* mvp */ = {
+			isa = PBXGroup;
+			children = (
+				4DC1B9B123F9203700DD07D7 /* presenter */,
+				4DC1B9A823F90B4300DD07D7 /* MVPUseControllerView.swift */,
+			);
+			path = mvp;
+			sourceTree = "<group>";
+		};
+		4DC1B9AE23F91AD700DD07D7 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				4DB8B6F723C0DBB100ECEBDE /* AutoHeightUIViewController.swift */,
+				4DC1B9AA23F918CF00DD07D7 /* IBaseControllerView.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		4DC1B9B123F9203700DD07D7 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4DC1B9AC23F919ED00DD07D7 /* MvpPresenter.swift */,
+			);
+			path = presenter;
 			sourceTree = "<group>";
 		};
 		4DC4D3AE23E859B0000C6EBA /* common */ = {
@@ -1630,6 +1670,7 @@
 		4DDEBE8123507B3B0086B406 /* demo */ = {
 			isa = PBXGroup;
 			children = (
+				4DC1B9A723F90B2800DD07D7 /* mvp */,
 				4D3C6CD123F6EE4600786982 /* tagview */,
 				4DEF467D23F3920800E99FB8 /* data */,
 				4DFF5ECA23E9A54D00A53B65 /* dataShowView */,
@@ -1908,9 +1949,11 @@
 				4D47A1C623B8731000921BCF /* TabBarBgChangeAnimationController.swift in Sources */,
 				4D35894A23AB08610080C194 /* NavShowViewController.swift in Sources */,
 				4D69F78923D3FCFE00DADC93 /* String+YYConvert.swift in Sources */,
+				4DC1B9A623F907BF00DD07D7 /* BasePresenter.swift in Sources */,
 				4D43A62123C866E30055058A /* CustomAlertDialog.swift in Sources */,
 				4DCD738F237AA3AB0015CC4B /* ColorUtils.swift in Sources */,
 				4D5B170E23C232ED00925666 /* DefaultRefreshViewController.swift in Sources */,
+				4DC1B9AD23F919ED00DD07D7 /* MvpPresenter.swift in Sources */,
 				4D90495423CFF97700CAF308 /* UIImage+Extensions.swift in Sources */,
 				4D2D4F84234F35F2008B6A82 /* IPhoneUtils.swift in Sources */,
 				4DBD28A723ED84EF003688D8 /* CommonCollectionViewLayout.swift in Sources */,
@@ -2061,6 +2104,7 @@
 				4D69F7BF23D4011300DADC93 /* OptionalType.swift in Sources */,
 				4D69F7B123D4004C00DADC93 /* Type.swift in Sources */,
 				4DC4D3B023E859C2000C6EBA /* Result.swift in Sources */,
+				4DC1B9A923F90B4300DD07D7 /* MVPUseControllerView.swift in Sources */,
 				4D8F05F123EB147E006E29DF /* CustomDataShowView.swift in Sources */,
 				4DADF5AC23EBDA940002A447 /* DefaultLoadingViewController.swift in Sources */,
 				4DFF5EC323E91DBD00A53B65 /* ShowCell.swift in Sources */,
@@ -2087,7 +2131,6 @@
 				4DA5B5EC23C61CD200C8B0DC /* ImageLoaderViewController.swift in Sources */,
 				4DBD289A23ED40FF003688D8 /* UIView+YYTransplantSubviews.m in Sources */,
 				4D69F7B323D4006C00DADC93 /* ProtocolType.swift in Sources */,
-				4D6685A623A9D446009F0309 /* YYIBaseTableViewController.swift in Sources */,
 				4DFC4D7D23ABC46F008CC3EB /* ExpanableListCell3.swift in Sources */,
 				4D97F81923822D9E00720F1C /* BaseFunctionListController.swift in Sources */,
 				4D5287BB23F4FD9D005A03A7 /* SQLiteDataBase.swift in Sources */,
@@ -2132,6 +2175,7 @@
 				4D90491623CFF61D00CAF308 /* AsyncStorage.swift in Sources */,
 				4DDEBE8623507BBF0086B406 /* MainViewController.swift in Sources */,
 				4D5287AB23F4F829005A03A7 /* Expression.swift in Sources */,
+				4DC1B9AB23F918CF00DD07D7 /* IBaseControllerView.swift in Sources */,
 				4D69F78B23D3FD3F00DADC93 /* Data+YYConvert.swift in Sources */,
 				4D69F7C823D4019100DADC93 /* ClassDescriptor.swift in Sources */,
 				4D69F79323D3FE3600DADC93 /* Metadata.swift in Sources */,

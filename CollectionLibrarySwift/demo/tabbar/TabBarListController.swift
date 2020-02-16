@@ -7,14 +7,22 @@
 //
 import UIKit
 
-class TabBarListController:YYIBaseTableViewController{
+class TabBarListController:AutoHeightUIViewController{
     
     var arrayM:NSMutableArray?
+    var tableView: UITableView!
+    var manager: YYTableViewManager!
+    var tableViewStyle: UITableView.Style = UITableView.Style.plain
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor=UIColor.white
+        
+        self.tableView = UITableView(frame: self.view.bounds, style: self.tableViewStyle)
+        self.view.addSubview(self.tableView);
+        self.manager = YYTableViewManager(tableView: self.tableView)
+        
         NavigationUtils
             .with(controller: self)
             .setTitle(title: InternationalUtils.getInstance.getString("tabbar"))
@@ -44,7 +52,7 @@ class TabBarListController:YYIBaseTableViewController{
         self.arrayM!.add(InternationalUtils.getInstance.getString("tabbar_click_y"))
         self.arrayM!.add(InternationalUtils.getInstance.getString("tabbar_remind_default"))
         self.arrayM!.add(InternationalUtils.getInstance.getString("tabbar_cumston_itemview"))
-
+        
         
         for str in arrayM!{
             let item = CommonTableItem()
@@ -77,9 +85,9 @@ class TabBarListController:YYIBaseTableViewController{
         case 5:
             present(TabBarSpringAnimationController(), animated: true, completion: nil)
         case 6:
-             present(TabBarBgChangeAnimationController(), animated: true, completion: nil)
+            present(TabBarBgChangeAnimationController(), animated: true, completion: nil)
         case 7:
-             present(TabBarBgBouncesController(), animated: true, completion: nil)
+            present(TabBarBgBouncesController(), animated: true, completion: nil)
         case 8:
             present(TabBarBgHightlightController(), animated: true, completion: nil)
         case 9:

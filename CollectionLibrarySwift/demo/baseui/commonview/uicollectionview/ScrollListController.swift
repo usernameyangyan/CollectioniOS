@@ -6,12 +6,19 @@
 //  Copyright © 2019 YoungManSter. All rights reserved.
 //
 
-class ScrollListController:YYIBaseTableViewController{
+class ScrollListController:AutoHeightUIViewController{
+    var tableView: UITableView!
+    var manager: YYTableViewManager!
+    var tableViewStyle: UITableView.Style = UITableView.Style.plain
     
     var arryM:NSMutableArray!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView = UITableView(frame: self.view.bounds, style: self.tableViewStyle)
+        self.view.addSubview(self.tableView);
+        self.manager = YYTableViewManager(tableView: self.tableView)
         
         self.view.backgroundColor=UIColor.white
         NavigationUtils
@@ -41,7 +48,7 @@ class ScrollListController:YYIBaseTableViewController{
             section.add(item: item)
             
             item.setSelectionHandler(selectHandler: {[weak self](currentItem) in
-                 self?.cellTapEvent(item: currentItem as! CommonTableItem )
+                self?.cellTapEvent(item: currentItem as! CommonTableItem )
             })
             
         }
@@ -56,7 +63,7 @@ class ScrollListController:YYIBaseTableViewController{
         case 0:
             navigationController?.pushViewController(CommonUICollectionViewController(), animated: true)
         case 1:
-             navigationController?.pushViewController(UICollectionViewHeadrController(), animated: true)
+            navigationController?.pushViewController(UICollectionViewHeadrController(), animated: true)
         default:
             navigationController?.pushViewController(ScrollViewHeaderViewController(), animated: true)
         }

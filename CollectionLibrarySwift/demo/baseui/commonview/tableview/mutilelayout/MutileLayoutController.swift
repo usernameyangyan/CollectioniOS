@@ -8,12 +8,17 @@
 
 import UIKit
 
-class MutileLayoutController:YYIBaseTableViewController{
+class MutileLayoutController:AutoHeightUIViewController{
     
+    var tableView: UITableView!
+    var manager: YYTableViewManager!
+    var tableViewStyle: UITableView.Style = UITableView.Style.plain
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView = UITableView(frame: self.view.bounds, style: self.tableViewStyle)
+        self.view.addSubview(self.tableView);
+        self.manager = YYTableViewManager(tableView: self.tableView)
         
         self.view.backgroundColor=UIColor.white
         NavigationUtils
@@ -21,7 +26,7 @@ class MutileLayoutController:YYIBaseTableViewController{
             .setTitle(title: InternationalUtils.getInstance.getString("tableview_multie"))
             .setBackBarButtonItem(style: .image(UIImage(named: "back_btn")),tintColor: UIColor.gray)
             .build()
-    
+        
         
         let section = YYTableViewSection()
         manager.add(section: section)
