@@ -124,7 +124,7 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 #### 一、应用基本配置
 
 ##### 1.应用内国际化语言配置 
-![效果图](https://github.com/usernameyangyan/CollectioniOS/blob/master/ScreenShots/1.gif)
+![](https://upload-images.jianshu.io/upload_images/4361802-192e42e96cc33f3e.gif?imageMogr2/auto-orient/strip)
 
 ######  实现流程：
 
