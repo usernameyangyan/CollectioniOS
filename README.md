@@ -17,9 +17,9 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 ### 更新说明
 
 ####  v1.0.9
-> 1.增加DataManager，对Http数据请求、UserDefaults、File、SQLite的整合使用，移除YYHttpUtils
-> 2.增加YYTagView
-> 3.增加MVP
+> 1.增加DataManager，对Http数据请求、UserDefaults、File、SQLite的整合使用，移除YYHttpUtils  
+> 2.增加YYTagView  
+> 3.增加MVP  
 
 ####  v1.0.8（增加以下功能）
 > 1.应用基本配置：应用内国际化语言配置、应用名称国际化。  
