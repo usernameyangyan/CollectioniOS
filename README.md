@@ -106,18 +106,22 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 - 加载框的使用
 - Toast提示
 
-**12.YYHttpUtils:网络请求** 
+**12.DataManager的使用(Http、UserDefaults、File、SQLite)** 
 
-- 基本网络请求
-- 文件下载
-- 图片上传
-- 网络请求的参数设置（包含请求超时、缓存时间等）
+- Http
+- UserDefaults
+- File
+- SQLite
 
 **13.YYDataShowView:数据加载显示页面** 
 
 - 通用数据加载提示框的使用
 
-**14.通用工具类** 
+**14. YYTagView** 
+
+**15. MVP**
+
+**16.通用工具类** 
 
 - 通用工具的使用
 
@@ -903,4 +907,636 @@ LoadingDialog
 
 | 属性| 作用 | 
 | :-----| :---- | 
-|_contentWidth| 提示框宽度，
+|_contentWidth| 提示框宽度，BaseDialogContentView已设置默认值|
+|_contentHeight| 提示框高度，必设值|
+|animationOption| 提示框动画，BaseDialogContentView已设置默认值|
+
+###### 2.自定义使用方法
+
+    let dialog=YYDialog
+                .createLoadingDialog()
+                .customDialog(custom: CustomLoadingDialog())
+            
+     dialog.show()
+
+
+- 其它属性修改请参照demo
+
+
+#### 十二、DataManager的使用(Http、UserDefaults、File、SQLite)
+
+![](https://user-gold-cdn.xitu.io/2020/2/16/1704e62f5d167b47?w=235&h=420&f=gif&s=968776)
+
+######  DataManager的属性
+
+- DataForHttp(DataManager里的Http模块)
+
+| 属性| 作用 | 
+| :-----| :---- | 
+|GlobalSetting(Http全局参数设定模块)||
+|showHttpRequestLog| Http请求日志输出|
+|cacheTimeOutWithClear| 缓存过期时间|
+|timeoutIntervalForRequest| 超时时间|
+|HttpOfNormal(Http的基本网络请求模块)||
+|Request<T:Convertible>.request(...)| Http通用请求方法，直接转化成Bean类，Bean类需要继承Convertible|
+|Share.cancel(...)| 取消请求|
+|Share.removeAllCache(...)| 清除所有缓存|
+|Share.removeObjectCache(...)| 根据url和params清除缓存|
+|HttpOfUpload(Http的图片上传模块)| |
+|Upload<T:Convertible>.upload(...)| Http通用上传方法，直接转化成Bean类，Bean类需要继承Convertible|
+|HttpOfDownload(Http的文件下载模块)| |
+|Download.download(...)| Http通用下载方法|
+|Download.resume(...)| 每次进入下载页面需要进行下载初始化|
+|Download.downloadCancel(...)|取消下载|
+|Download.downloadCancelAll()|取消全部下载|
+|Download.downloadPercent(...)|下载百分比|
+|Download.downloadDelete(...)|删除某个下载|
+|Download.downloadStatus(...)|取消状态|
+|Download.downloadFilePath(...)|下载完成后，文件所在位置|
+
+- DataForSQLiteDB(DataManager里的SQLite模块)
+
+| 属性| 作用 | 
+| :-----| :---- | 
+|QueryData<T:Convertible>.queryAllData()|查询bean类所有的数据,T代表bean类型，需要继承Convertible以及SQLiteModel|
+|QueryData<T:Convertible>.queryAllDataByAsnyc(...)| 异步查询bean类所有数据，T代表bean类型，需要继承Convertible以及SQLiteModel|
+|QueryData<T:Convertible>.queryDataByWhere(...)| 根据sql条件查询数据|
+|QueryData<T:Convertible>.queryDataWithWhereByAsync(...)| 异步根据sql条件查询数据|
+|QueryData<T:Convertible>.queryDataByFirst(...)| 查询第一条数据|
+|Share.insertData(...)| 插入数据|
+|Share.insertDataList(...)| 插入列表数据|
+|Share.insertDataListByAsync(...)| 异步插入列表数据|
+|Share.deleteDataByWhere(...)| 根据sql条件删除数据|
+|Share.deleteAllData(...)| 删除所有数据|
+|Share.deleteAllDataByAsync(...)| 异步删除所有数据|
+|Share.updateData(...)| 更新数据|
+|Share.updateDataList(...)| 更新数据列表|
+|Share.updateDataListByAsync(...)| 异步更新数据列表|
+|Share.drop(...)| 删除表|
+
+- DataForFile(DataManager里的File模块)
+
+| 属性| 作用 | 
+| :-----| :---- | 
+|saveObjectForFile(...)|保存字段内容，其中参数appendFolderPathAndFileName代表文件路径，这里只需设定补充路径(/test/test.txt)|
+|queryObjectForFile(...)|根据路径获取内容|
+
+- DataForUserDefaults(DataManager里的UserDefaults模块)
+
+| 属性| 作用 | 
+| :-----| :---- | 
+|saveObjectForKey(...)|  保存内容|
+|queryObjectForKey(...)|根据Key获取内容|
+
+###### 1.Http
+
+- 基本网络请求
+
+       let urlStr = "https://api.apiopen.top/getJoke?page="+String(format: "%1d", pageNow)+"&count=20&type=video"
+        
+        let httpParams:HttpRequestParams=HttpRequestParams()
+        httpParams
+            .setRequestType(requestType: .reqStringUrl)
+            .setReqUrl(requestUrl: urlStr)
+            .setReponseType(responseType: .netWork)
+            .setHttpTypeAndReqParamType(httpTypeAndReqParamType: .get)
+            .build()
+        
+        DataManager.DataForHttp.HttpOfNormal.Request<Result<Array<ContentInfo>>>.request(httpRequestParams: httpParams, requestSuccessResult: {
+            value in
+        }, requestFailureResult: {
+            error in
+        })
+
+
+###### 注意：在请求时候需要传入一个泛型类作为json数据的转换数据结构，bean类需要实现Convertible才能转化
+
+- HttpRequestParams
+
+| 属性| 作用 | 
+| :-----| :---- | 
+|setReponseType(responseType:ReponseType)| 设置响应方式，cache：返回缓存数据，netWork：返回网络数据，noCacheRetrunNetWork：缓存优先|
+|setHttpTypeAndReqParamType(参数)| 设置请求方法以及请求参数类型，post_json：method为post,请求参数为json格式，pos_param：method为post,请求参数为键值对，get：method为get|
+|setReqUrl(requestUrl:String)| 设置请求Url|
+|setUrlRequest(urlRequest: URLRequestConvertible)| 设置请求URLRequest|
+|setRequestType(requestType:RequestType)| 设置请求的类型|
+|setParams(params: Parameters)| 设置请求参数集合|
+|setParam(key:String,param:Any)| 设置请求参数 |
+|setHttpHeaders(headers: HTTPHeaders)| 设置请求头列表|
+|setHttpHeader(key:String,header:String)| 设置请求头|
+
+- 文件下载
+
+ ###### 1. 每次进入下载页面需要进行下载初始化
+
+    DataManager.DataForHttp.HttpOfDownload.Download.resume(url: item.downloadUrl, downloadResume: {
+            //
+     })
+
+ ###### 2. 文件下载
+
+    let downloadParams:HttpDownloadRequestParams=HttpDownloadRequestParams()
+                downloadParams
+                    .setFileName(fileName: "\(item.indexPath.row)---.pdf")
+                    .setReqUrl(requestUrl: url!)
+                    .build()
+                
+    DataManager.DataForHttp.HttpOfDownload.Download.download(httpDownloadRequestParams: downloadParams, requestSuccessResult: {
+                    respone in
+                   
+                },requestFailureResult: {
+                    error in
+                    
+                },downloadProgress: {
+                    progress in
+                    
+                })
+- HttpDownloadRequestParams
+
+| 属性| 作用 | 
+| :-----| :---- | 
+|setFileName(fileName:String)| 设置下载文件名|
+setHttpTypeAndReqParamType(参数)| 设置请求方法以及请求参数类型，post_json：method为post,请求参数为json格式，pos_param：method为post,请求参数为键值对，get：method为get|
+|setReqUrl(requestUrl:String)| 设置请求Url|
+|setParams(params: Parameters)| 设置请求参数列表|
+|setParam(key:String,param:Any)| 设置请求参数 |
+|setHttpHeaders(headers: HTTPHeaders)| 设置请求头列表|
+|setHttpHeader(key:String,header:String)| 设置请求头|
+
+
+ -  图片上传
+
+
+
+
+         let url="xxxxx"
+         let httpParams=HttpUploadRequestParams()
+         httpParams
+             .setParam(key: "type", param: "addroadblock")//设置请求参数也可通过setParams()设置Array
+             .setReqUrl(requestUrl: url) //设置请求链接
+             .setFileSuffixName(fileSuffixName: ".jpg") //设置文件后缀名，后续上传其它文件扩展也可使用
+             .setImages(images: [UIImage(named: "d")!,UIImage(named: "e")!])//设置上传图片列表
+             .setMultiparName(multipartName: "imgList") //设置对应后台服务器上传文件字段
+             .build()
+                
+            /**
+            通过泛型设置结果转换的been类，可返回上传进度
+            */
+                
+        DataManager.DataForHttp.HttpOfUpload.Upload.upload(httpRequestParams: httpParams, requestSuccessResult: {
+            result in
+        }, requestFailureResult: {
+            error in
+                                
+        }, requestProgress: {
+            progress in
+        })
+
+- HttpUploadRequestParams
+
+| 属性| 作用 | 
+| :-----| :---- | 
+|setMultiparName(multipartName:String)| 后天接口提供的字段名|
+|setImages(images: [UIImage]?) | 设置上传图片|
+|setFileSuffixName(fileSuffixName:String)| 设置上传图片后缀名|
+|setReqUrl(requestUrl:String) | 设置请求url|
+|setParams(params: Parameters)| 设置请求参数|
+|setParam(key:String,param:Any)-| 设置请求参数 |
+|setHttpHeaders(headers: HTTPHeaders)-| 设置请求头|
+|setHttpHeader(key:String,header:String)| 设置请求头|
+
+
+ ###### 2.SQLite
+
+- 初始化数据库和数据库迁移
+
+
+        SQLiteVersionMigrate.setDbVersion(dbName:"collectionDB",dbVersion: 0,migrate: {
+            oldVersion,newVersion in
+            
+            for i in oldVersion...newVersion{
+                if(i == 1){
+                    SQLiteVersionMigrate
+                        .with(cls: SqliteData.self)
+                        .addAttribute(attribute: "a1", dataType: String.self)
+                        .addAttribute(attribute: "a2", dataType: String.self)
+                        .build()
+                }
+            }
+            
+      })
+
+###### 注意：
+######  1.设置数据库名称
+######  2.通过SQLiteVersionMigrate可以进行版本迁移
+######  3.SQLiteVersionMigrate
+
+| 属性| 作用 | 
+| :-----| :---- | 
+|setDbVersion(...)| 设置数据名、版本号、版本变化回调|
+|with(...)|设置需要变化bean类|
+|addAttribute(...)| 表需要增加的字段|
+
+
+
+- 保存的bean类
+
+
+
+        @objcMembers
+        class SqliteData: SQLiteModel,Convertible{
+
+            var des:String=""
+            var id:Int=0
+    
+            override func primaryKey() -> String {
+                return "id"
+            }
+   
+        }
+
+###### 注意：bean需要：
+######  1.使用@objcMembers  
+######  2.实现SQLiteModel
+######  3.实现Convertible(Json转化成bean需要)
+######  4.实现primaryKey()方法，必须指定主键
+
+- 实例初始化
+
+
+        let commonSqliteData=SqliteData()
+        commonSqliteData?.id=0
+        commonSqliteData?.des="SQLite测试使用"
+
+- 插入数据
+
+
+        DataManager.DataForSQLiteDB.Share.insertData(object: commonSqliteData!)
+
+- 删除所有数据
+
+
+        DataManager.DataForSQLiteDB.Share.deleteAllData(cls: SqliteData.self)
+
+- 异步插入数据
+
+
+        DataManager.DataForSQLiteDB.Share.insertDataListByAsync(cls: SqliteData.self, objectList: list, insertCompleteBlock: {
+        })
+
+- 更新数据
+
+
+        DataManager.DataForSQLiteDB.Share.updateData(object: commonSqliteData!)
+
+- 查询数据
+
+
+        let result=DataManager.DataForSQLiteDB.QueryData<SqliteData>.queryAllData()
+        DataManager.DataForSQLiteDB.Share.updateData(object: commonSqliteData!)
+
+- 其它可以查看DataManager
+
+
+ ###### 3.File
+
+- 查询数据
+
+
+        let result=DataManager.DataForFile<String>.queryObjectForFile(appendFolderPathAndFileName:"test/test.txt")
+
+
+- 保存数据
+
+
+        //保存String类型
+        DataManager.DataForFile<String>.saveObjectForFile(appendFolderPathAndFileName:"test/test.txt" , object: "123")
+        //保存类型
+        DataManager.DataForFile<UserDeBean>.saveObjectForFile(appendFolderPathAndFileName: appendBeanPath, object: userDefault)
+
+
+ ###### 3.UserDefaults
+
+- 保存数据
+
+
+        DataManager.DataForUserDefaults<String>.saveObjectForKey(key: "key1", object:"1234")
+
+- 查询数据
+
+
+        let result=DataManager.DataForUserDefaults<UserDeBean>.queryObjectForKey(key: "key2")
+
+
+
+#### 十三、YYDataShowView:数据加载显示页面
+
+![](https://user-gold-cdn.xitu.io/2020/2/11/1703343b692074ad?w=235&h=420&f=gif&s=308769)
+
+
+- YYDataShowView基本用法
+
+| 属性| 作用 | 
+| :-----| :---- | 
+|init(defaultDataShowViewParams:DefaultDataShowViewParams,...)| 默认初始化方法|
+|init(custom:BaseDataShowContentView,visibileHeight:CGFloat?=UIScreen.main.bounds.height,aboveView:UIView?=nil)) | 自定义展示内容初始化方法|
+|show(parentView:UIViewController)| 显示DataShowView|
+|hide() | 隐藏DataShowView|
+
+- DefaultDataShowViewParams基本用法
+
+| 属性| 作用 | 
+| :-----| :---- | 
+|setDefaultDataShowViewType(...)| 设置显示样式：noData、noNetWork、loading|
+|setDefaultNoDataShowImg(...)| 设置没有数据时显示的图片|
+|setDefaultNoNetworkShowImg(...)| 设置没有网络是显示的图片|
+|setDefaultShowImgWidth(...) | 设置显示图片的宽度|
+| setDefaultShowImgHeight(...)| 设置显示图片的高度 | 
+| setDefaultShowNoDataText(...)| 设置没有数据时显示的文本| 
+|setDefaultShowNoNetWorkText(...)| 设置没有网络时显示的文本|
+|setDefaultShowTextSize(...)| 设置显示文本的字体大小|
+|setDefaultShowTextColor(...)| 设置显示文本的颜色|
+|setDefaultShowButtonText(...) | 设置按钮的文本|
+|setDefaultShowButtonTextSize(...) | 设置按钮的字体大小|
+|setDefaultShowButtonTextColor(...)| 设置按钮的文本颜色|
+|setDefaultShowButtonBorderWidth(...) | 设置按钮的外边框宽度|
+|setDefaultShowButtonBorderColor(...)| 设置按钮外边框颜色|
+|setDefaultSHowButtonPadding(...) | 设置按钮的内边距|
+|setDefaultShowButtonCornerRadius(...)| 设置按钮的圆角|
+|setHiddenShowButton(i...)  | 设置按钮是否显示|
+|setDefaultShowButtonBackgroundColor(...)| 设置按钮背景颜色|
+|setDefaultShowLoadingText(...)| 设置加载文本|
+|setDefaulutShowLoadingImgsTimeInterval(...)| 设置加载Image的间隔时间|
+
+
+- 没有数据样式
+
+
+    let defaultDataShowViewParams=DefaultDataShowViewParams()
+    defaultDataShowViewParams
+            .setDefaultNoDataShowImg(defaultNoDataShowImg: "nodata")
+            .build()
+    dataShowView=YYDataShowView(defaultDataShowViewParams:defaultDataShowViewParams,aboveView: navigation.bar,reloadHandler: {
+            YYDialog.createToast().show(view: self.view, text: "点击重新加载按钮")
+    })
+        
+    dataShowView!.show(parentView: self)
+
+
+- 没有网络样式
+
+
+     let defaultDataShowViewParams=DefaultDataShowViewParams()
+     defaultDataShowViewParams
+            .setDefaultDataShowViewType(showViewType: .noNetWork)
+            .setDefaultNoNetworkShowImg(defaultNoNetworkShowImg: "nonetwork")
+            .build()
+        
+      dataShowView=YYDataShowView(defaultDataShowViewParams: defaultDataShowViewParams,aboveView: navigation.bar,reloadHandler: {
+            YYDialog.createToast().show(view: self.view, text: "点击重新加载按钮")
+        })
+        
+       dataShowView!.show(parentView: self)
+
+
+- 加载数据样式
+
+
+    let imgs=["default_data_show_loading1","default_data_show_loading2","default_data_show_loading3","default_data_show_loading4","default_data_show_loading5","default_data_show_loading6","default_data_show_loading7","default_data_show_loading8","default_data_show_loading10","default_data_show_loading11","default_data_show_loading12"]
+        
+    let defaultDataShowViewParams=DefaultDataShowViewParams()
+        defaultDataShowViewParams
+            .setDefaultDataShowViewType(showViewType: .loading)
+            .setDefaultLoadingImags(defaultLoadingImags: imgs)
+            .build()
+        
+     dataShowView=YYDataShowView(defaultDataShowViewParams: defaultDataShowViewParams,aboveView: navigation.bar)
+     dataShowView!.show(parentView: self)
+
+- 自定义样式
+
+##### 1.实现BaseDataShowContentView，然后指定_contentHeight(高度)
+##### 2.加载自定义View
+
+
+    let customView=CustomDataShowView()
+    YYDataShowView.init(custom: customView,aboveView: navigation.bar).show(parentView: self)
+    
+    
+    
+#### 十四、YYTagView
+
+![](https://user-gold-cdn.xitu.io/2020/2/16/1704dfad0ae99af6?w=234&h=419&f=gif&s=1677927)
+
+- 基本用法
+
+| 属性| 作用 | 
+| :-----| :---- | 
+|YYTagViewBuilder||
+|setTagTextColor(...)| 设置Tag的字体颜色|
+|setTagSelectedTextColor(...)| 设置Tag点击的字体颜色|
+|setTagLineBreakMode(...)| 设置Tag的LineBreakMode|
+|setTagBackgroundColor(...)| 设置Tag的背景颜色|
+|setTagSelectBackgroundColor(...)| 设置Tag的选择时的背景颜色|
+|setTagCornerRadius(...)| 设置Tag圆角|
+|setTagBorderWidth(...)| 设置Tag外框宽度|
+|setTagBorderColor(...)| 设置Tag的外框颜色|
+|setTagSelectedBorderColor(...)| 设置Tag外框选择时颜色|
+|setTagHorizontalPadding(...)| 设置Tag的左右内边距|
+|setTagVerticalPadding(...)| 设置Tag的上下内边距|
+|setTagHorizontalMargin(...)| 设置Tag的左右外边距|
+|setTagVerticalMargin(...)| 设置Tag的上下外边距|
+|setTagAlignment(...)| 设置TagView的位置|
+|setTagShadowColor(...)| 设置Tag的阴影颜色|
+|setTagShadowRadius(...)| 设置Tag的阴影圆角|
+|setTagTextFont(...)| 设置Tag的字体|
+|setTagItem(...)| 增加TagItem|
+|setTagItems(...)| 设置TagItem列表|
+|setTagVerticalMargin(...)| 设置Tag的上下外边距|
+|buildTagView(...)| 返回TagView|
+|TagView| |
+|removeTag(...)| 移除TagItem|
+|removeAllTags()|移除TagItems |
+|setTagClick(...)|设置TagItem点击事件 |
+
+
+- 基本使用代码
+
+      let tags=["测试使用内容","YYTagView","33","西亚","123456","ijklmn","45677","This should be the third tag","人间烟火"]
+        
+      let tagView=YYTagViewBuilder
+            .with()
+            .setTagItems(tags)
+            .setTagTextFont(textFont: UIFont.systemFont(ofSize: 20))
+            .setTagTextColor(color: UIColor.white)
+            .setTagAlignment(alignment: .center)
+            .setTagBackgroundColor(color: UIColor.systemBlue)
+            .setTagSelectedTextColor(color: UIColor.red)
+            .setTagSelectedBorderColor(color: UIColor.gray)
+            .setTagCornerRadius(cornerRadius: 5)
+            .setTagVerticalPadding(padding: 10)
+            .setTagHorizontalPadding(padding: 10)
+            .setTagVerticalMargin(margin: 10)
+            .setTagHorizontalMargin(margin: 10)
+            .buildTagView()
+        
+        
+        tagView.setTagClick(tagClick: {
+            title,tagView,sender in
+            print(title)
+        })
+
+
+
+#### 十五、MVP
+
+##### 步骤：
+- 1.创建一个Presenter,实现BasePresenter
+- 2.创建一个与View关联的协议
+- 3.实现IBaseControllerView<T:BasePresenter>和2创建的协议
+- 4.通过mPresenter调用Presenter里的方法
+- 5.在Presenter里通过mView调用View的方法
+
+##### 代码
+
+- 协议以及Presenter
+
+      protocol MvpView {
+          func refreshUI(value:Result<Array<ContentInfo>>)
+      }
+
+      class MvpPresenter:BasePresenter{
+    
+          func requestData() {
+        
+          let urlStr = "https://api.apiopen.top/getJoke?page=1&count=20&type=video"
+        
+          let httpParams:HttpRequestParams=HttpRequestParams()
+          httpParams
+            .setRequestType(requestType: .reqStringUrl)
+            .setReqUrl(requestUrl: urlStr)
+            .setReponseType(responseType: .netWork)
+            .setHttpTypeAndReqParamType(httpTypeAndReqParamType: .get)
+            .build()
+        
+           DataManager.DataForHttp.HttpOfNormal.Request<Result<Array<ContentInfo>>>.request(httpRequestParams: httpParams, requestSuccessResult: {
+            value in
+            
+            
+            (self.mView as! MVPUseControllerView).refreshUI(value: value)
+            
+        }, requestFailureResult: {
+            error in
+        })
+        
+        }
+
+      }
+
+- View实现
+
+      class MVPUseControllerView:IBaseControllerView<MvpPresenter>,MvpView{
+    
+    
+         var tableView: UITableView!
+         var manager: YYTableViewManager!
+         var tableViewStyle: UITableView.Style = UITableView.Style.plain
+    
+         let section:YYTableViewSection = YYTableViewSection()
+         var dataLoadingView:YYDataShowView?
+    
+    
+        func refreshUI(value:Result<Array<ContentInfo>>) {
+          for content in value.result!{
+                self.section.add(item: content)
+          }
+        
+            self.manager.reloadData()
+            self.dataLoadingView?.hide()
+         }
+    
+    
+    
+      override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.backgroundColor=UIColor.white
+        self.tableView = UITableView(frame: self.view.bounds, style: self.tableViewStyle)
+        self.view.addSubview(self.tableView);
+        self.manager = YYTableViewManager(tableView: self.tableView)
+        
+        NavigationUtils
+            .with(controller: self)
+            .setBackBarButtonItem(style: .image(UIImage(named: "back_btn")),tintColor: UIColor.gray)
+            .setTitle(title:"MVP")
+            .build()
+        
+        
+        manager.add(section: section)
+        manager.register(ShowCell.self, ContentInfo.self)
+        tableView.separatorStyle = .none
+        
+        
+        let imgs=["default_data_show_loading1","default_data_show_loading2","default_data_show_loading3","default_data_show_loading4","default_data_show_loading5","default_data_show_loading6","default_data_show_loading7","default_data_show_loading8","default_data_show_loading10","default_data_show_loading11","default_data_show_loading12"]
+        
+        let loadingDataShowViewParams=DefaultDataShowViewParams()
+        loadingDataShowViewParams
+            .setDefaultDataShowViewType(showViewType: .loading)
+            .setDefaultLoadingImags(defaultLoadingImags: imgs)
+            .build()
+        dataLoadingView=YYDataShowView(defaultDataShowViewParams:loadingDataShowViewParams,aboveView:navigation.bar)
+        
+        self.dataLoadingView?.show(parentView: self)
+        
+        mPresenter?.requestData()
+        
+       }
+      }
+
+
+
+#### 十六、通用工具类
+
+- IPhoneUtils
+
+| 属性| 作用 | 
+| :-----| :---- | 
+|getNavBarHeight()|获取NavigationBar高度 |
+|isIphoneX()|判断是否是iphoneX以上 |
+
+- ColorUtils
+
+| 属性| 作用 | 
+| :-----| :---- | 
+|clickSelectBgChange(...)|设置View点击时的背景变化 |
+|RGBColor(...)|获取RGB颜色 |
+|colorWithHexString()|16进制颜色转化成UIColor|
+
+- InternationalUtils
+
+| 属性| 作用 | 
+| :-----| :---- | 
+|getString(...) |获取本地Localizable对应的内容 |
+|initUserLanguage()|初始化语言 |
+|setLanguage(...)|设置当前语言|
+|getCurrentLanguage() |获取当前语言|
+
+- UILabelUtils
+
+| 属性| 作用 | 
+| :-----| :---- | 
+|getLabHeigh(...) |获取UILabel高度 |
+
+- PositionSettingUtils
+
+| 属性| 作用 | 
+| :-----| :---- | 
+|position(...) |设置View的位置和高度 |
+
+- Logger(日志输出)
+
+- UILabelPadding(可设置内边距的UILabel)
+
+| 属性| 作用 | 
+| :-----| :---- | 
+|init(...) |初始化UILabel，设置内边距 |
