@@ -114,7 +114,7 @@ open class YYToast{
         height=label.frame.height
     }
     
-    private func removeToastView(){
+    private static func removeToastView(){
         for view in YYToast.toastContentViews{
             view.alpha = 0.0;
         }
@@ -125,7 +125,7 @@ open class YYToast{
     public func show(view:UIView,text:String) -> Void {
         self.text = text;
         commonint()
-        removeToastView()
+        YYToast.removeToastView()
         YYToast.toastContentViews.append(contentView!)
         view.addSubview(contentView!)
         let height=UILabelUtils.getLabHeigh(labelStr: self.text!, font: UIFont.systemFont(ofSize: fontSize), width: UIScreen.main.bounds.width-40,lineSpacing: lineSpacing)+padding*2+self.height
