@@ -1,6 +1,6 @@
 ## CollectioniOS
 
-![版本](https://img.shields.io/badge/release-1.1.0-green.svg)
+![版本](https://img.shields.io/badge/release-1.1.1-green.svg)
 ![Travis](https://img.shields.io/badge/llicense-MIT-green.svg)
 ![Travis](https://img.shields.io/badge/build-passing-green.svg)
 
@@ -16,11 +16,11 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 >###### 掘金地址：https://juejin.im/post/5e423d4ef265da572a0cec9f
 
 ## 框架的引入
-- pod 'CollectioniOS','~>1.1.0'
+- pod 'CollectioniOS','~>1.1.1'
 
 ### 更新说明
 
-####  v1.1.0
+####  v1.1.1
 > 解决Toast连续点击时多个Toast同时显示
 
 ####  v1.0.9
@@ -43,10 +43,15 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 > 12.YYDataShowView:数据加载显示样式（没有数据、网络错误、正在加载）
 
 
-## 注意：由于项目的网络请求是使用了http,在使用之前需要配置项目Info.plist，在其中加上App Transport Security Settings->Allow Arbitrary Loads(设置为YES)
+### 注意：由于项目的网络请求是使用了http,在使用之前需要配置项目Info.plist，在其中加上App Transport Security Settings->Allow Arbitrary Loads(设置为YES)
 
 
 ## 项目介绍
+
+#### 整体效果
+
+![](https://user-gold-cdn.xitu.io/2020/2/18/17058aa6524cb906?w=236&h=420&f=gif&s=303923)
+
 ### 文章目录
 **1.应用基本配置** 
 
