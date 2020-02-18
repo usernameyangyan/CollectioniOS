@@ -1,6 +1,6 @@
 ## CollectioniOS
 
-![版本](https://img.shields.io/badge/release-1.0.9-green.svg)
+![版本](https://img.shields.io/badge/release-1.1.0-green.svg)
 ![Travis](https://img.shields.io/badge/llicense-MIT-green.svg)
 ![Travis](https://img.shields.io/badge/build-passing-green.svg)
 
@@ -12,9 +12,12 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 >###### 掘金地址：https://juejin.im/post/5e423d4ef265da572a0cec9f
 
 ## 框架的引入
-- pod 'CollectioniOS','~>1.0.9'
+- pod 'CollectioniOS','~>1.1.0'
 
 ### 更新说明
+
+####  v1.1.0
+> 解决Toast连续点击时多个Toast同时显示
 
 ####  v1.0.9
 > 1.增加DataManager，对Http数据请求、UserDefaults、File、SQLite的整合使用，移除YYHttpUtils  
@@ -1106,7 +1109,7 @@ setHttpTypeAndReqParamType(参数)| 设置请求方法以及请求参数类型�
 |setHttpHeader(key:String,header:String)| 设置请求头|
 
 
- ###### 2.SQLite
+ ###### 2.SQLite(数据量比较大的时候花费的时间比较长)
 
 - 初始化数据库和数据库迁移
 
