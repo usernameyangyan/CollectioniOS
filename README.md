@@ -36,6 +36,9 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 > 12.YYDataShowView:数据加载显示样式（没有数据、网络错误、正在加载）
 
 
+## 注意：由于项目的网络请求是使用了http,在使用之前需要配置项目Info.plist，在其中加上App Transport Security Settings->Allow Arbitrary Loads(设置为YES)
+
+
 ## 项目介绍
 ### 文章目录
 **1.应用基本配置** 
