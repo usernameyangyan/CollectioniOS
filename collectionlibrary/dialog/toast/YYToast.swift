@@ -9,6 +9,7 @@
 import UIKit
 
 open class YYToast{
+    private static var toastContentViews:[UIView]=[UIView]()
     
     //Toast展示的时间
     public enum Duration {
@@ -113,10 +114,19 @@ open class YYToast{
         height=label.frame.height
     }
     
+    private func removeToastView(){
+        for view in YYToast.toastContentViews{
+            view.alpha = 0.0;
+        }
+        YYToast.toastContentViews.removeAll()
+    }
+    
     ///展示一个Toast视图
     public func show(view:UIView,text:String) -> Void {
         self.text = text;
         commonint()
+        removeToastView()
+        YYToast.toastContentViews.append(contentView!)
         view.addSubview(contentView!)
         let height=UILabelUtils.getLabHeigh(labelStr: self.text!, font: UIFont.systemFont(ofSize: fontSize), width: UIScreen.main.bounds.width-40,lineSpacing: lineSpacing)+padding*2+self.height
         
