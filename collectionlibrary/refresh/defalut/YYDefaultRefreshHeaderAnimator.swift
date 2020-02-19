@@ -23,7 +23,7 @@ open class YYDefaultRefreshHeaderAnimator: UIView, YYRefreshProtocol, YYRefreshA
     
     fileprivate let imageView: UIImageView = {
         let imageView = UIImageView.init()
-        imageView.image = UIImage(named: "icon_pull_to_refresh_arrow")
+        imageView.image=UIImage.init(named: "Collectionlibrary.bundle/icon_pull_to_refresh_arrow@2x.png")
         return imageView
     }()
     
