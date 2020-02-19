@@ -1,6 +1,6 @@
 ## CollectioniOS
 
-![版本](https://img.shields.io/badge/release-1.1.1-green.svg)
+![版本](https://img.shields.io/badge/release-1.1.3-green.svg)
 ![Travis](https://img.shields.io/badge/llicense-MIT-green.svg)
 ![Travis](https://img.shields.io/badge/build-passing-green.svg)
 
@@ -16,12 +16,13 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 >###### 掘金地址：https://juejin.im/post/5e423d4ef265da572a0cec9f
 
 ## 框架的引入
-- pod 'CollectioniOS','~>1.1.1'
+- pod 'CollectioniOS','~>1.1.3'
 
 ### 更新说明
 
-####  v1.1.1
-> 解决Toast连续点击时多个Toast同时显示
+####  v1.1.3
+> 1.解决Toast连续点击时多个Toast同时显示   
+> 2.解决库中的默认图片显示不出来问题
 
 ####  v1.0.9
 > 1.增加DataManager，对Http数据请求、UserDefaults、File、SQLite的整合使用，移除YYHttpUtils  
