@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D122EA223D6088900679182 /* HttpDownloadRequestParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D122EA123D6088900679182 /* HttpDownloadRequestParams.swift */; };
-		4D1396B523FCFD5C00BDD2DD /* Collectionlibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4D1396B423FCFD5C00BDD2DD /* Collectionlibrary.bundle */; };
+		4D1396B923FD052200BDD2DD /* Collectionlibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4D1396B823FD052200BDD2DD /* Collectionlibrary.bundle */; };
 		4D18166C23AD1B1D00288A40 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D18166B23AD1B1D00288A40 /* CategoryController.swift */; };
 		4D2164D723812B59006A0914 /* MultiLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2164D623812B59006A0914 /* MultiLanguageViewController.swift */; };
 		4D2164DD23816CB4006A0914 /* CommonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2164DC23816CB4006A0914 /* CommonTableViewCell.swift */; };
@@ -334,7 +334,7 @@
 
 /* Begin PBXFileReference section */
 		4D122EA123D6088900679182 /* HttpDownloadRequestParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpDownloadRequestParams.swift; sourceTree = "<group>"; };
-		4D1396B423FCFD5C00BDD2DD /* Collectionlibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Collectionlibrary.bundle; sourceTree = "<group>"; };
+		4D1396B823FD052200BDD2DD /* Collectionlibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Collectionlibrary.bundle; sourceTree = "<group>"; };
 		4D18166B23AD1B1D00288A40 /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
 		4D1B5E802397F191006BF129 /* CollectionLibrarySwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CollectionLibrarySwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D2164D623812B59006A0914 /* MultiLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLanguageViewController.swift; sourceTree = "<group>"; };
@@ -698,12 +698,12 @@
 			path = tabbar;
 			sourceTree = "<group>";
 		};
-		4D1396B323FCFD2D00BDD2DD /* res */ = {
+		4D1396B723FD052200BDD2DD /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				4D1396B423FCFD5C00BDD2DD /* Collectionlibrary.bundle */,
+				4D1396B823FD052200BDD2DD /* Collectionlibrary.bundle */,
 			);
-			path = res;
+			path = resource;
 			sourceTree = "<group>";
 		};
 		4D2164DB23816C46006A0914 /* commoncell */ = {
@@ -718,7 +718,7 @@
 		4D2D4F7E234F30E9008B6A82 /* collectionlibrary */ = {
 			isa = PBXGroup;
 			children = (
-				4D1396B323FCFD2D00BDD2DD /* res */,
+				4D1396B723FD052200BDD2DD /* resource */,
 				4DC1B9AE23F91AD700DD07D7 /* base */,
 				4DC1B9A423F9070C00DD07D7 /* mvp */,
 				4D3C6CCC23F6EACE00786982 /* tagview */,
@@ -1885,7 +1885,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D3BD03E233216EC00426BF1 /* Assets.xcassets in Resources */,
-				4D1396B523FCFD5C00BDD2DD /* Collectionlibrary.bundle in Resources */,
+				4D1396B923FD052200BDD2DD /* Collectionlibrary.bundle in Resources */,
 				4D97F81E23828D5900720F1C /* InfoPlist.strings in Resources */,
 				4D79139723810853007C0AE4 /* Localizable.strings in Resources */,
 			);
