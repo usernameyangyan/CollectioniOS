@@ -335,6 +335,9 @@
 /* Begin PBXFileReference section */
 		4D122EA123D6088900679182 /* HttpDownloadRequestParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpDownloadRequestParams.swift; sourceTree = "<group>"; };
 		4D1396DB23FD2BFD00BDD2DD /* Collectionlibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Collectionlibrary.bundle; sourceTree = "<group>"; };
+		4D1396E623FD460800BDD2DD /* CollectionLibrarySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionLibrarySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D1396E723FD460800BDD2DD /* CollectionLibrarySwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CollectionLibrarySwiftTests.xctest; path = "/Users/huatu/MyFolder/MyProject/CollectioniOS/build/Debug-iphoneos/CollectionLibrarySwiftTests.xctest"; sourceTree = "<absolute>"; };
+		4D1396E823FD460800BDD2DD /* CollectionLibrarySwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionLibrarySwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D18166B23AD1B1D00288A40 /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
 		4D1B5E802397F191006BF129 /* CollectionLibrarySwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CollectionLibrarySwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D2164D623812B59006A0914 /* MultiLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLanguageViewController.swift; sourceTree = "<group>"; };
@@ -351,13 +354,10 @@
 		4D38D07123F6410F00D6F53F /* Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		4D38D07323F64F0600D6F53F /* DataManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerViewController.swift; sourceTree = "<group>"; };
 		4D38D07823F6645600D6F53F /* UserDeBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeBean.swift; sourceTree = "<group>"; };
-		4D3BD033233216E700426BF1 /* CollectionLibrarySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = CollectionLibrarySwift.app; path = "/Users/huatu/MyFolder/MyProject/CollectioniOS/build/Debug-iphoneos/CollectionLibrarySwift.app"; sourceTree = "<absolute>"; };
 		4D3BD036233216E700426BF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D3BD03D233216EC00426BF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D3BD042233216EC00426BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4D3BD047233216ED00426BF1 /* CollectionLibrarySwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CollectionLibrarySwiftTests.xctest; path = "/Users/huatu/MyFolder/MyProject/CollectioniOS/build/Debug-iphoneos/CollectionLibrarySwiftTests.xctest"; sourceTree = "<absolute>"; };
 		4D3BD04D233216ED00426BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4D3BD052233216ED00426BF1 /* CollectionLibrarySwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CollectionLibrarySwiftUITests.xctest; path = "/Users/huatu/MyFolder/MyProject/CollectioniOS/build/Debug-iphoneos/CollectionLibrarySwiftUITests.xctest"; sourceTree = "<absolute>"; };
 		4D3BD056233216ED00426BF1 /* CollectionLibrarySwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionLibrarySwiftUITests.swift; sourceTree = "<group>"; };
 		4D3BD058233216ED00426BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D3C6CCD23F6EB0C00786982 /* YYTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYTagView.swift; sourceTree = "<group>"; };
@@ -834,6 +834,8 @@
 				4D3BD035233216E700426BF1 /* CollectionLibrarySwift */,
 				4D3BD04A233216ED00426BF1 /* CollectionLibrarySwiftTests */,
 				4D3BD055233216ED00426BF1 /* CollectionLibrarySwiftUITests */,
+				4D1396E623FD460800BDD2DD /* CollectionLibrarySwift.app */,
+				4D1396E823FD460800BDD2DD /* CollectionLibrarySwiftUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1794,7 +1796,7 @@
 			);
 			name = CollectionLibrarySwift;
 			productName = CollectionLibrarySwift;
-			productReference = 4D3BD033233216E700426BF1 /* CollectionLibrarySwift.app */;
+			productReference = 4D1396E623FD460800BDD2DD /* CollectionLibrarySwift.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4D3BD046233216ED00426BF1 /* CollectionLibrarySwiftTests */ = {
@@ -1812,7 +1814,7 @@
 			);
 			name = CollectionLibrarySwiftTests;
 			productName = CollectionLibrarySwiftTests;
-			productReference = 4D3BD047233216ED00426BF1 /* CollectionLibrarySwiftTests.xctest */;
+			productReference = 4D1396E723FD460800BDD2DD /* CollectionLibrarySwiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		4D3BD051233216ED00426BF1 /* CollectionLibrarySwiftUITests */ = {
@@ -1830,7 +1832,7 @@
 			);
 			name = CollectionLibrarySwiftUITests;
 			productName = CollectionLibrarySwiftUITests;
-			productReference = 4D3BD052233216ED00426BF1 /* CollectionLibrarySwiftUITests.xctest */;
+			productReference = 4D1396E823FD460800BDD2DD /* CollectionLibrarySwiftUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
