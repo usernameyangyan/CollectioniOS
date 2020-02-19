@@ -19,6 +19,9 @@ public class YYDataShowView:UIView{
             self.reloadHandler=reloadHandler
         }
         
+        let path = Bundle.init(for: YYDefaultRefreshHeaderAnimator.self).path(forResource: "Collectionlibrary", ofType: "bundle")
+        let bundle = Bundle.init(path: path!)
+        
         
         let showText:UILabel = UILabel()
         showText.textAlignment = .center
@@ -43,24 +46,33 @@ public class YYDataShowView:UIView{
             centerView.addSubview(showImg)
             
             if(defaultDataShowViewParams.getDefaultDataShowViewType() == DefaultDataShowViewParams.ShowViewType.noData){
-                if(defaultDataShowViewParams.getDefaultNoDataShowImg()==""){
-                    showImg.isHidden=true
-                    imgHeight=0
-                }else{
+                if(defaultDataShowViewParams.getDefaultNoDataShowImg() == nil){
                     showImg.isHidden=false
-                    showImg.image=UIImage(named: defaultDataShowViewParams.getDefaultNoDataShowImg())
-                    
+                    showImg.image=UIImage.init(named: "collectionlibrary_nodata", in: bundle, compatibleWith: nil)
+                }else{
+                    if(defaultDataShowViewParams.getDefaultNoDataShowImg()==""){
+                        showImg.isHidden=true
+                        imgHeight=0
+                    }else{
+                        showImg.isHidden=false
+                        showImg.image=UIImage(named: defaultDataShowViewParams.getDefaultNoDataShowImg()!)
+                    }
                 }
                 
                 text=defaultDataShowViewParams.getDefaultShowNoDataText()
             }else if(defaultDataShowViewParams.getDefaultDataShowViewType() == DefaultDataShowViewParams.ShowViewType.noNetWork){
-                if(defaultDataShowViewParams.getDefaultNoNetworkShowImg()==""){
-                    showImg.isHidden=true
-                    imgHeight=0
-                }else{
+                if(defaultDataShowViewParams.getDefaultNoNetworkShowImg()==nil){
                     showImg.isHidden=false
-                    showImg.image=UIImage(named: defaultDataShowViewParams.getDefaultNoNetworkShowImg())
+                    showImg.image=UIImage.init(named: "collectionlibrary_nonetwork", in: bundle, compatibleWith: nil)
                     
+                }else{
+                    if(defaultDataShowViewParams.getDefaultNoNetworkShowImg()==""){
+                        showImg.isHidden=true
+                        imgHeight=0
+                    }else{
+                        showImg.isHidden=false
+                        showImg.image=UIImage(named: defaultDataShowViewParams.getDefaultNoNetworkShowImg()!)
+                    }
                 }
                 
                 text=defaultDataShowViewParams.getDefaultShowNoNetWorkText()
@@ -131,27 +143,45 @@ public class YYDataShowView:UIView{
             let showImg=UIImageView.init()
             centerView.addSubview(showImg)
             
-            if(defaultDataShowViewParams.getDefaultLoadingImags().count>0){
+            showImg.animationDuration = defaultDataShowViewParams.getDefaulutShowLoadingImgsTimeInterval()
+            
+            if(defaultDataShowViewParams.getDefaultLoadingImags() == nil){
                 showImg.isHidden=false
-                
-                showImg.animationDuration = defaultDataShowViewParams.getDefaulutShowLoadingImgsTimeInterval()
-                
                 
                 var animationImages:[UIImage]=[UIImage]()
                 
-                for i in 0...(defaultDataShowViewParams.getDefaultLoadingImags().count-1){
-                    let img=UIImage(named: defaultDataShowViewParams.getDefaultLoadingImags()[i])
-                    if(img != nil){
-                        animationImages.append(img!)
-                    }
+                for i in 1...12{
+                    let img=UIImage.init(named: "collectionlibrary_default_data_show_loading\(i)", in: bundle, compatibleWith: nil)
+                    
+                    animationImages.append(img!)
                 }
                 
                 showImg.animationImages = animationImages
                 showImg.startAnimating()
+                
+                
             }else{
-                showImg.isHidden=true
-                imgHeight=0
+                if(defaultDataShowViewParams.getDefaultLoadingImags()!.count>0){
+                    showImg.isHidden=false
+                    
+                    var animationImages:[UIImage]=[UIImage]()
+                    
+                    for i in 0...(defaultDataShowViewParams.getDefaultLoadingImags()!.count-1){
+                        let img=UIImage(named: defaultDataShowViewParams.getDefaultLoadingImags()![i])
+                        if(img != nil){
+                            animationImages.append(img!)
+                        }
+                    }
+                    
+                    showImg.animationImages = animationImages
+                    showImg.startAnimating()
+                }else{
+                    showImg.isHidden=true
+                    imgHeight=0
+                }
             }
+            
+            
             
             showImg
                 .centerX(equalTo: centerView.yy_centerX)

@@ -26,7 +26,6 @@ class DefaultNoNetWorkViewController:UIViewController{
         let defaultDataShowViewParams=DefaultDataShowViewParams()
         defaultDataShowViewParams
             .setDefaultDataShowViewType(showViewType: .noNetWork)
-            .setDefaultNoNetworkShowImg(defaultNoNetworkShowImg: "nonetwork")
             .build()
         
         dataShowView=YYDataShowView(defaultDataShowViewParams: defaultDataShowViewParams,aboveView: navigation.bar,reloadHandler: {

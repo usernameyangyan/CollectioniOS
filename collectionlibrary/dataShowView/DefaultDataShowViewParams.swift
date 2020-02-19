@@ -21,8 +21,8 @@ public class DefaultDataShowViewParams{
     }
     
     fileprivate var showViewType:ShowViewType = .noData
-    fileprivate var defaultNoDataShowImg=""
-    fileprivate var defaultNoNetworkShowImg=""
+    fileprivate var defaultNoDataShowImg:String?=nil
+    fileprivate var defaultNoNetworkShowImg:String?=nil
     fileprivate var defaultImgWidth:CGFloat=150
     fileprivate var defaultImgHeight:CGFloat=150
     fileprivate var defaultShowNoDataText:String="暂无数据"
@@ -40,7 +40,7 @@ public class DefaultDataShowViewParams{
     fileprivate var isHiddenShowButton:Bool=false
     fileprivate var defaultShowButtonBackgroundColor:UIColor=UIColor.clear
     fileprivate var defaulutShowLoadingImgsTimeInterval:TimeInterval=1
-    fileprivate var defaultLoadingImags:[String]=[]
+    fileprivate var defaultLoadingImags:[String]?=nil
     
     public func setDefaultDataShowViewType(showViewType:ShowViewType)->DefaultDataShowViewParams{
         self.showViewType=showViewType
@@ -56,7 +56,7 @@ public class DefaultDataShowViewParams{
         return self
     }
     
-    func getDefaultNoDataShowImg() -> String {
+    func getDefaultNoDataShowImg() -> String? {
         return defaultNoDataShowImg
     }
     
@@ -65,7 +65,7 @@ public class DefaultDataShowViewParams{
         return self
     }
     
-    func getDefaultNoNetworkShowImg() -> String {
+    func getDefaultNoNetworkShowImg() -> String? {
         return defaultNoNetworkShowImg
     }
     
@@ -210,7 +210,7 @@ public class DefaultDataShowViewParams{
         return self
     }
     
-    func getDefaultLoadingImags() -> [String] {
+    func getDefaultLoadingImags() -> [String]? {
         return defaultLoadingImags
     }
 

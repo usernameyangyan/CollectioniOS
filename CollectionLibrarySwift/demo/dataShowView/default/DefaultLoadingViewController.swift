@@ -22,12 +22,10 @@ class DefaultLoadingViewController:UIViewController{
             .setTitle(title:"默认加载数据显示样式(可根据需要修改对应参数)")
             .build()
         
-        let imgs=["default_data_show_loading1","default_data_show_loading2","default_data_show_loading3","default_data_show_loading4","default_data_show_loading5","default_data_show_loading6","default_data_show_loading7","default_data_show_loading8","default_data_show_loading10","default_data_show_loading11","default_data_show_loading12"]
         
         let defaultDataShowViewParams=DefaultDataShowViewParams()
         defaultDataShowViewParams
             .setDefaultDataShowViewType(showViewType: .loading)
-            .setDefaultLoadingImags(defaultLoadingImags: imgs)
             .build()
         
         dataShowView=YYDataShowView(defaultDataShowViewParams: defaultDataShowViewParams,aboveView: navigation.bar)

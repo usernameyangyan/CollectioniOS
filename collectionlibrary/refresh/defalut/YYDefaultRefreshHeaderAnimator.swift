@@ -25,7 +25,7 @@ open class YYDefaultRefreshHeaderAnimator: UIView, YYRefreshProtocol, YYRefreshA
         let path = Bundle.init(for: YYDefaultRefreshHeaderAnimator.self).path(forResource: "Collectionlibrary", ofType: "bundle")
         let bundle = Bundle.init(path: path!)
         let imageView = UIImageView.init()
-        imageView.image=UIImage.init(named: "icon_pull_to_refresh_arrow@2x", in: bundle, compatibleWith: nil)
+        imageView.image=UIImage.init(named: "collectionlibrary_icon_pull_to_refresh_arrow@2x", in: bundle, compatibleWith: nil)
         return imageView
     }()
     

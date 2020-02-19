@@ -49,13 +49,11 @@ class MVPUseControllerView:IBaseControllerView<MvpPresenter>,MvpView{
         manager.register(ShowCell.self, ContentInfo.self)
         tableView.separatorStyle = .none
         
-        
-        let imgs=["default_data_show_loading1","default_data_show_loading2","default_data_show_loading3","default_data_show_loading4","default_data_show_loading5","default_data_show_loading6","default_data_show_loading7","default_data_show_loading8","default_data_show_loading10","default_data_show_loading11","default_data_show_loading12"]
+    
         
         let loadingDataShowViewParams=DefaultDataShowViewParams()
         loadingDataShowViewParams
             .setDefaultDataShowViewType(showViewType: .loading)
-            .setDefaultLoadingImags(defaultLoadingImags: imgs)
             .build()
         dataLoadingView=YYDataShowView(defaultDataShowViewParams:loadingDataShowViewParams,aboveView:navigation.bar)
         
