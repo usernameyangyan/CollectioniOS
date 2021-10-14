@@ -29,9 +29,7 @@ class BaseFunctionController:AutoHeightUIViewController{
             .setTitle(title: InternationalUtils.getInstance.getString("base_setting"))
             .setBackBarButtonItem(style: .image(UIImage(named: "back_btn")),tintColor: UIColor.gray)
             .build()
-        
-        tableView.separatorStyle = .none
-        
+                
         // Add main section
         let section = YYTableViewSection()
         manager.add(section: section)

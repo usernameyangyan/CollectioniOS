@@ -123,13 +123,21 @@ open class YYTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
         }
         #endif
         
-        return item.cellHeight
+        var height=item.cellHeight
+        if(lineView != nil){
+            height = item.cellHeight + lineView!.frame.height
+        }
+        
+        return height!
     }
     
+    
+    private var lineView:UIView?=nil
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let currentSection = sections[indexPath.section]
         let item = currentSection.items[indexPath.row]
         item.tableViewManager = self
+        
         
         var cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier) as? YYTableViewCell
         
@@ -155,6 +163,19 @@ open class YYTableViewManager: NSObject, UITableViewDelegate, UITableViewDataSou
         
         cell?.item = item
         cell?.cellWillAppear()
+        
+        
+        lineView=cell?.setCustomLineView(tableView.frame.width, item.cellHeight)
+        if(lineView != nil){
+            tableView.separatorStyle = .none
+            cell!.addSubview(lineView!)
+            cell!.contentView
+                .top(equalTo: cell!.yy_top, constant:0)
+                .bottom(equalTo: lineView!.yy_top, constant: 0)
+                .left(equalTo: cell!.yy_left, constant: 0)
+                .right(equalTo: cell!.yy_right, constant: 0)
+                .build()
+        }
         
         return cell!
     }

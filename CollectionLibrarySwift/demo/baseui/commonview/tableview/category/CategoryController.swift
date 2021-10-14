@@ -34,7 +34,7 @@ class CategoryController:UIViewController{
         
         
         categoryTableView=UITableView.init()
-        productTableView=UITableView.init()
+        productTableView = UITableView(frame: view.bounds, style: .grouped)
         self.view.addSubview(categoryTableView)
         self.view.addSubview(productTableView)
         

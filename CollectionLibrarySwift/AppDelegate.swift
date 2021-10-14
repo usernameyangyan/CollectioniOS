@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         InternationalUtils.getInstance.initUserLanguage()
         
+        NavigationUtils.initNavigationUtils()
+        
         let nav = UINavigationController(rootViewController: MainViewController())
 
         nav._configuration.barTintColor=UIColor.white

@@ -28,9 +28,7 @@ class CustomDriverController:AutoHeightUIViewController{
             .setBackBarButtonItem(style: .image(UIImage(named: "back_btn")),tintColor: UIColor.gray)
             .build()
     
-        
-        tableView.separatorStyle = .none
-        
+    
         
         // Add main section
         let section = YYTableViewSection()

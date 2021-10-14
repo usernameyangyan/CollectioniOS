@@ -98,15 +98,12 @@ class ShowCell:YYTableViewCell{
     
     
     
-    override func draw(_ rect: CGRect) {
-        //获取绘图上下文
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return
-        }
+    override func setCustomLineView(_ width: CGFloat,_ height:CGFloat) -> UIView? {
+        let line = UIView()
+        line.frame = CGRect(x:0, y: height, width: width, height:1)
+        line.backgroundColor = UIColor.colorWithHexString("#D2D3D5")
+        return line
         
-        //#FF4500
-        context.setStrokeColor(UIColor.colorWithHexString("#D2D3D5").cgColor)
-        context.stroke(CGRect(x:0, y: rect.size.height, width: rect.size.width, height:1))
     }
     
 }

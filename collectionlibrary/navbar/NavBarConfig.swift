@@ -334,7 +334,6 @@ extension UIViewController {
     
     func adjustsSafeAreaInsetsAfterIOS11() {
         guard #available(iOS 11.0, *) else { return }
-        
         let height = _navigationBar.additionalView?.frame.height ?? 0
         additionalSafeAreaInsets.top = _navigationBar.isHidden
             ? -view.safeAreaInsets.top
@@ -430,8 +429,6 @@ extension UIViewController : WRAwakeProtocol{
     }
     
     @objc private func navigation_viewDidLoad() {
-        navigation_viewDidLoad()
-        
         guard isNavigationBarEnabled else { return }
         
         setupNavigationBarWhenViewDidLoad()
@@ -442,8 +439,6 @@ extension UIViewController : WRAwakeProtocol{
     }
     
     @objc private func navigation_viewWillAppear(_ animated: Bool) {
-        navigation_viewWillAppear(animated)
-        
         guard isNavigationBarEnabled else { return }
         
         updateNavigationBarWhenViewWillAppear()
@@ -481,26 +476,12 @@ extension UIViewController : WRAwakeProtocol{
     }
 }
 
-
-extension UIApplication
-{
-    private static let runOnce:Void = { //使用静态属性以保证只调用一次(该属性是个方法)
-        NothingToSeeHere.harmlessFunction()
-    }()
-    
-    open override var next: UIResponder?{ //重写next属性
-        UIApplication.runOnce
-        return super.next
-    }
-}
-
-
-public protocol WRAwakeProtocol: class {
+public protocol WRAwakeProtocol: AnyObject {
     static func wrAwake()
 }
 
 
-class NothingToSeeHere
+open class NothingToSeeHere
 {
     static func harmlessFunction(){
         UIViewController.wrAwake()

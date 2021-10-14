@@ -24,14 +24,14 @@ class SelectionHeaderController:UIViewController{
         
         
         
-        tableView = UITableView(frame: view.bounds, style: .plain)
+        tableView = UITableView(frame: view.bounds, style: .grouped)
         view.addSubview(tableView)
-        
-        
+    
+
         manager = YYTableViewManager(tableView: tableView)
-        
         for i in 0 ... 8 {
             let headerView:SelectionHeader=SelectionHeader.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 40))
+            
             headerView.setContent(con: "Header " + String(i))
             let section = YYTableViewSection.init(headerView: headerView)
             manager.add(section: section)

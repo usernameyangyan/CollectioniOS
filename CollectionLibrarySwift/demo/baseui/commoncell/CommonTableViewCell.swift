@@ -30,15 +30,13 @@ class CommonTableViewCell:YYTableViewCell{
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.contentView.addSubview(titleLab)
-        
-        
+    
         titleLab
             .top(equalTo: contentView.yy_top, constant: 15)
             .bottom(equalTo: contentView.yy_bottom, constant: 15)
             .left(equalTo: contentView.yy_left, constant: 15)
             .right(equalTo: contentView.yy_right, constant: 15)
             .build()
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -52,19 +50,13 @@ class CommonTableViewCell:YYTableViewCell{
         let item = self.item as! CommonTableItem
         titleLab.text = item.desc
     }
-    
-    
-    
-    //MARK:自定义底部分割线
-    override func draw(_ rect: CGRect) {
-        //获取绘图上下文
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return
-        }
+
+    override func setCustomLineView(_ width: CGFloat,_ height:CGFloat) -> UIView? {
+        let line = UIView()
+        line.frame = CGRect(x:0, y: height, width: width, height:1)
+        line.backgroundColor = UIColor.colorWithHexString("#D2D3D5")
+        return line
         
-        //#FF4500
-        context.setStrokeColor(UIColor.colorWithHexString("#D2D3D5").cgColor)
-        context.stroke(CGRect(x:0, y: rect.size.height, width: rect.size.width, height:1))
     }
     
 }

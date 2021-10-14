@@ -26,6 +26,17 @@ open class NavigationUtils{
     }
     
     
+    //需要在AppDelegate调用
+    static func initNavigationUtils(){
+        if (instance == nil) {
+            instance = NavigationUtils()
+        }
+        
+        NothingToSeeHere.harmlessFunction()
+    
+    }
+    
+    
     public func setHidden(isHidden:Bool)->NavigationUtils{
         vc!.navigation.bar.isHidden=isHidden
         return instance!

@@ -23,7 +23,7 @@ class DataManagerViewController:UIViewController{
         
         
         
-        tableView = UITableView(frame: view.bounds, style: .plain)
+        tableView = UITableView(frame: view.bounds, style: .grouped)
         view.addSubview(tableView)
         
         

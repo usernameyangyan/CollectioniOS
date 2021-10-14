@@ -33,7 +33,7 @@ class ExpanableListCell1:YYTableViewCell{
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-         self.contentView.backgroundColor=UIColor.orange
+        self.contentView.backgroundColor=UIColor.orange
         self.contentView.addSubview(titleLab)
         
         

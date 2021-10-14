@@ -43,6 +43,7 @@ class ExpandableListController:AutoHeightUIViewController{
         section.add(item: item0)
         // 如果isExpand为true，则下一级的item（也就是item1）必须加入section
         item0.isExpand = true
+        item0.autoHeight(manager)
         // level 1
         for _ in 0 ..< 3 {
             let item1 = ExpanableListItem2()
@@ -51,13 +52,15 @@ class ExpandableListController:AutoHeightUIViewController{
             item1.isExpand = false
             section.add(item: item1)
             item0.arrNextLevel.append(item1)
-            
+            item1.autoHeight(manager)
+
             // level 2
             for _ in 0 ..< 3 {
                 let item2 = ExpanableListItem3()
                 // 如果isExpand为false，则后面就不用把item加入section
                 item2.isExpand = false
                 item1.arrNextLevel.append(item2)
+                item2.autoHeight(manager)
             }
         }
         

@@ -16,7 +16,9 @@ open class YYTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    open func cellWillAppear() {}
+    open func cellWillAppear() {
+        
+    }
 
     open func cellDidAppear() {
         let item = self.item as YYTableViewItem
@@ -34,5 +36,11 @@ open class YYTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    open func setCustomLineView(_ width: CGFloat,_ height:CGFloat) -> UIView?{
+        return nil
+    }
+    
 }
 
