@@ -1,6 +1,6 @@
 ## CollectioniOS
 
-![版本](https://img.shields.io/badge/release-1.1.3-green.svg)
+![版本](https://img.shields.io/badge/release-1.1.4-green.svg)
 ![Travis](https://img.shields.io/badge/llicense-MIT-green.svg)
 ![Travis](https://img.shields.io/badge/build-passing-green.svg)
 
