@@ -1,6 +1,6 @@
 ## CollectioniOS
 
-![版本](https://img.shields.io/badge/release-1.1.4-green.svg)
+![版本](https://img.shields.io/badge/release-1.1.5-green.svg)
 ![Travis](https://img.shields.io/badge/llicense-MIT-green.svg)
 ![Travis](https://img.shields.io/badge/build-passing-green.svg)
 
@@ -16,11 +16,11 @@ CollectioniOS聚合了项目搭建的一些基本模块，节约开发者时间�
 >###### 掘金地址：https://juejin.im/post/5e423d4ef265da572a0cec9f
 
 ## 框架的引入
-- pod 'CollectioniOS','~>1.1.4'
+- pod 'CollectioniOS','~>1.1.5'
 
 ### 更新说明
 
-####  v1.1.4
+####  v1.1.5
 > 1.解决NavigationBar不显示问题
 > 2.修复UITableView自定义分割线不显示问题
 
